@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import './assets/fonts/fonts.css';
+
+@theme {
+  --font-bellefair: 'Bellefair', serif;
+  --font-barlow: 'Barlow Condensed', sans-serif;
+}

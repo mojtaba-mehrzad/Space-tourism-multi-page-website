@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import './index.css';
+
+#nav{
+    @apply  absolute flex flex-row items-center justify-between p-6 sm:p-0 lg:pt-10 top-0 w-full sm:h-24 lg:h-[130px];
+}
+
+#nav-logo-container{
+    @apply flex lg:items-center flex-1 md:overflow-visible z-20;
+}
+
+#nav-icon{
+    @apply w-10 sm:mx-10 md:mx-16 sm:w-12;
+}
+
+#draw-nav-line{
+    @apply hidden md:block -mr-8  lg:grow h-px bg-white/30 ml-8 z-30;
+}
+
+#nav-links-container-1{
+    @apply hidden sm:flex relative sm:justify-end sm:px-10 lg:pr-16 lg:pl-24 sm:w-[640px] lg:min-w-fit lg:w-1/2 sm:h-full sm:backdrop-blur-2xl sm:bg-[rgba(255,255,255,0.05)];
+}
+
+#nav-links-list{
+    @apply flex flex-col sm:flex-row gap-8 sm:gap-12 sm:h-full;
+}
+
+#nav-links-item{
+    @apply flex w-full sm:min-w-fit sm:h-full border-r-[3px] sm:border-r-0 sm:border-b-[3px] border-transparent hover:border-[rgba(255,255,255,0.5)] active:border-white;
+}
+
+#item-link{
+    @apply size-full place-content-center font-barlow text-white cursor-pointer tracking-widest active:font-bold;
+}
+
+#nav-mobileMenu{
+    @apply sm:hidden top-0 right-0 pl-8 pt-[133px] h-full w-2/3 bg-[rgba(255,255,255,0.05)] backdrop-blur-2xl z-0 ;
+}
+
+#home{
+    @apply relative h-dvh sm:h-full lg:h-dvh w-full pt-22 lg:pt-[133px] bg-[url(@/assets/images/home/background-home-mobile.jpg)] sm:bg-[url(@/assets/images/home/background-home-tablet.jpg)] lg:bg-[url(@/assets/images/home/background-home-desktop.jpg)] bg-cover bg-center bg-no-repeat;
+}
