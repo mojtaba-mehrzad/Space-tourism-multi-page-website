@@ -5,9 +5,14 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: process.env.NODE_ENV === 'production'
-    ? '/Space-tourism-multi-page-website/'
-    : '/',             
+  base:'/Space-tourism-multi-page-website/',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
