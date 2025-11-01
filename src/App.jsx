@@ -22,7 +22,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Space-tourism-multi-page-website/">
       <Routes>
           <Route path="/" element={<Home />} />
       </Routes>
