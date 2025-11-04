@@ -26,11 +26,11 @@
 }
 
 #nav-links-item{
-    @apply flex w-full sm:min-w-fit sm:h-full border-r-[3px] sm:border-r-0 sm:border-b-[3px] border-transparent hover:border-[rgba(255,255,255,0.5)] active:border-white;
+    @apply flex w-full sm:min-w-fit sm:h-full;
 }
 
-#item-link{
-    @apply size-full place-content-center font-barlow text-white cursor-pointer tracking-widest active:font-bold;
+.item-link{
+    @apply size-full place-content-center font-barlow text-white cursor-pointer tracking-widest uppercase opacity-60 border-r-[3px] sm:border-r-0 sm:border-b-[3px] border-transparent transition-all duration-300;
 }
 
 #nav-mobileMenu{
@@ -38,5 +38,30 @@
 }
 
 #home{
-    @apply relative h-dvh sm:h-full lg:h-dvh w-full pt-22 lg:pt-[133px] bg-[url(@/assets/images/home/background-home-mobile.jpg)] sm:bg-[url(@/assets/images/home/background-home-tablet.jpg)] lg:bg-[url(@/assets/images/home/background-home-desktop.jpg)] bg-cover bg-center bg-no-repeat;
+    @apply relative h-dvh sm:h-full lg:h-dvh w-full pt-22 lg:pt-[133px] bg-[url(@/assets/images/home-bg/background-home-mobile.jpg)] sm:bg-[url(@/assets/images/home-bg/background-home-tablet.jpg)] lg:bg-[url(@/assets/images/home-bg/background-home-desktop.jpg)] bg-cover bg-center bg-no-repeat;
 }
+
+#home-main-container{
+    @apply flex flex-col lg:flex-row p-6 sm:p-0 sm:px-10 sm:py-32 lg:p-32 sm:gap-10 justify-between text-center lg:text-left size-full;
+}
+
+#home-texts-container{
+    @apply flex flex-col lg:flex-1 sm:px-12 gap-2 h-fit cursor-default;
+}
+
+#home-title{
+    @apply font-barlow uppercase sm:text-[28px] tracking-[2px] sm:tracking-[4px] text-[#D0D6F9];
+}
+
+#home-title p{
+    @apply font-bellefair text-white text-[80px] sm:text-[144px];
+}
+
+#home-descripton{
+    @apply font-barlow text-[15px] sm:text-base lg:text-lg tracking-widest leading-[180%] text-[#D0D6F9];
+}
+
+#explore-button-container{
+    @apply flex grow items-center justify-center lg:flex-1 lg:mr-10 lg:place-content-end font-bellefair text-lg;
+}
+

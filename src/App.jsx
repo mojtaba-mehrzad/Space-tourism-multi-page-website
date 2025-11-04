@@ -9,6 +9,7 @@ import { SplitText } from "gsap/SplitText";
 import Navbar from "./components/layout/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Destination from "./pages/Destination/Destination";
 
 gsap.registerPlugin(
   useGSAP,
@@ -18,13 +19,19 @@ gsap.registerPlugin(
   SplitText
 );
 
+const basename =
+  import.meta.env.MODE === "development"
+    ? "/"
+    : "/Space-tourism-multi-page-website/";
+
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <BrowserRouter basename="/Space-tourism-multi-page-website/">
+    <BrowserRouter basename={basename}>
       <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Destination" element={<Destination />} />
       </Routes>
     </BrowserRouter>
   );
