@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { navLinks } from "./navLinksData";
+import { navLinks } from "../../../datas/navLinksData";
 
 export default function NavLinks({ onClick }) {
   return (
