@@ -11,6 +11,7 @@ import Home from "./pages/Home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Destination from "./pages/Destination/Destination";
 import RootLayout from "./components/layout/RootLayout";
+import Crew from "./pages/Crew/Crew";
 
 gsap.registerPlugin(
   useGSAP,
@@ -30,7 +31,8 @@ const router = createBrowserRouter([{
   element: <RootLayout />,
   children:[
     {index:true, element:<Home />},
-    {path:"Destination", element: <Destination />}
+    {path:"Destination", element: <Destination />},
+    {path:"Crew", element: <Crew />}
   ]
 }])
 

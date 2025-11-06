@@ -46,11 +46,19 @@
 }
 
 .page-container{
-    @apply flex flex-col items-center p-6 sm:p-10 lg:py-12 lg:px-[165px] gap-6 text-center;
+    @apply flex flex-col items-center size-full p-6 sm:p-10 lg:py-12 lg:px-[165px] gap-6 text-center;
 }
 
 .page-content-section {
-    @apply flex flex-col lg:flex-row lg:justify-between! gap-10 lg:py-[132px];
+    @apply flex flex-col lg:flex-row gap-8 sm:max-w-lg lg:max-w-full lg:h-[734px];
+}
+
+.page-texts-container{
+    @apply lg:flex flex-col items-center justify-center lg:items-start w-full  sm:size-full flex-1; 
+}
+
+.text-inner{
+    @apply flex flex-col items-center mb-auto lg:items-start lg:justify-start lg:mt-40 flex-1 min-h-[290px] size-full w-full lg:max-w-[539px];
 }
 
 .description{
@@ -58,8 +66,10 @@
 }
 
 .Separator-line{
-    @apply w-full h-px my-6 lg:my-10 opacity-60 bg-[#979797];
+    @apply w-full h-px opacity-60 bg-[#979797];
 }
+
+
 
 #home{
     @apply relative h-dvh sm:h-full lg:h-dvh w-full pt-22 lg:pt-[133px] bg-[url(@/assets/images/home-bg/background-home-mobile.jpg)] sm:bg-[url(@/assets/images/home-bg/background-home-tablet.jpg)] lg:bg-[url(@/assets/images/home-bg/background-home-desktop.jpg)] bg-cover bg-fixed bg-center bg-no-repeat;
@@ -101,16 +111,12 @@
     @apply w-[150px] sm:w-[300px] lg:w-[480px];
 }
 
-.destinations-nav-container{
-    @apply lg:flex lg:flex-col lg:items-start lg:h-full sm:px-22 lg:px-12 flex-1;
-}
-
-.destinations-nav{
-    @apply mb-6 lg:mb-10;
-}
+/* .destinations-nav{
+    @apply ;
+} */
 
 .destinations-nav-list {
-    @apply flex items-center justify-center gap-8 
+    @apply flex items-center justify-center gap-8;
 }
 
 .destinations-nav-item{
@@ -135,4 +141,34 @@
 
 .destinations-information-value{
     @apply  font-bellefair text-[28px] text-white
+}
+
+
+.crew{
+    @apply relative w-full pt-22 lg:pt-[133px] bg-[url(@/assets/images/crew-bg/background-crew-mobile.jpg)] sm:bg-[url(@/assets/images/crew-bg/background-crew-tablet.jpg)] lg:bg-[url(@/assets/images/crew-bg/background-crew-desktop.jpg)] bg-fixed bg-cover bg-center bg-no-repeat;
+
+}
+
+.crew-role{
+    @apply pt-10 font-bellefair text-lg sm:text-[24px] lg:text-[32px] uppercase text-white/50;
+}
+
+.crew-name{
+    @apply pb-6 font-bellefair lg:text-left text-[24px] sm:text-[40px] lg:text-[56px] uppercase text-white;
+}
+
+.crew-nav-container{
+    @apply pt-6  ;
+}
+
+.crew-nav-list{
+    @apply flex justify-center gap-4 lg:gap-10;
+}
+
+.image-container{
+    @apply flex items-center justify-center h-full flex-1;
+}
+
+.crew-images-size{
+    @apply min-w-full w-full sm:max-w-[446px] lg:w-[540px] h-auto my-auto;
 }

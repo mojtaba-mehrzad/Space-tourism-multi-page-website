@@ -15,16 +15,22 @@ export default function Destination() {
           destination
         </h1>
         <section className="page-content-section">
-          <Image png={selectPlanet.images.png} webp={selectPlanet.images.webp} imageSize={"destinations-images-size"} continerStylr={"destinations-images"} />
-          <div className="destinations-nav-container">
-            <NavigationBar data={data} selectedPlanet={selectPlanet} setPlanet={setSelectPlanet} />
-            <h2 className="destinations-planet-name">
-              {selectPlanet.name}
-            </h2>
-            <p className=" description">{selectPlanet.description}</p>
-            <div className="Separator-line"></div>
-            <div className="w-full">
-              <TravelInformation distance={selectPlanet.distance} travel={selectPlanet.travel} />
+          <section className="image-container">
+            <Image png={selectPlanet.images.png} webp={selectPlanet.images.webp} imageSize={"destinations-images-size"} continerStylr={"destinations-images"} />
+          </section>
+          <div className="page-texts-container">
+            <div className="text-inner gap-6 lg:gap-10">
+              <NavigationBar data={data} selectedPlanet={selectPlanet} setPlanet={setSelectPlanet} />
+              <div className="mb-auto h-[218px]">
+                <h2 className="destinations-planet-name">
+                  {selectPlanet.name}
+                </h2>
+                <p className=" description">{selectPlanet.description}</p>
+              </div>
+              <div className="Separator-line"></div>
+              <div className="w-full">
+                <TravelInformation distance={selectPlanet.distance} travel={selectPlanet.travel} />
+              </div>
             </div>
           </div>
         </section>
