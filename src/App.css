@@ -2,11 +2,11 @@
 @import './index.css';
 
 #nav{
-    @apply  absolute flex flex-row items-center justify-between p-6 sm:p-0 lg:pt-10 top-0 w-full sm:h-24 lg:h-[130px];
+    @apply  absolute top-0 left-0 right-0 z-50 flex  items-center justify-between p-6 sm:p-0 lg:pt-10 w-full sm:h-24 lg:h-[130px];
 }
 
 #nav-logo-container{
-    @apply flex lg:items-center flex-1 md:overflow-visible z-20;
+    @apply flex lg:items-center flex-1 z-20;
 }
 
 #nav-icon{
@@ -14,11 +14,11 @@
 }
 
 #draw-nav-line{
-    @apply hidden md:block -mr-8  lg:grow h-px bg-white/30 ml-8 z-30;
+    @apply hidden md:block -mr-8  lg:grow h-px bg-white/30 ml-8 z-30 pointer-events-none;
 }
 
 #nav-links-container-1{
-    @apply hidden sm:flex relative sm:justify-end sm:px-10 lg:pr-16 lg:pl-24 sm:w-[640px] lg:min-w-fit lg:w-1/2 sm:h-full sm:backdrop-blur-2xl sm:bg-[rgba(255,255,255,0.05)];
+    @apply hidden sm:flex relative sm:justify-end sm:px-10 lg:pr-16 lg:pl-24 sm:w-[640px] lg:min-w-fit lg:w-1/2 sm:h-full sm:backdrop-blur-2xl sm:bg-white/5;
 }
 
 #nav-links-list{
@@ -37,8 +37,32 @@
     @apply sm:hidden top-0 right-0 pl-8 pt-[133px] h-full w-2/3 bg-[rgba(255,255,255,0.05)] backdrop-blur-2xl z-0 ;
 }
 
+.page-title{
+    @apply sm:self-start text-white font-barlow uppercase text-base sm:text-xl lg:text-[28px] tracking-[2px];
+}
+
+.page-title-number{
+    @apply pr-6 font-bold opacity-25;
+}
+
+.page-container{
+    @apply flex flex-col items-center p-6 sm:p-10 lg:py-12 lg:px-[165px] gap-6 text-center;
+}
+
+.page-content-section {
+    @apply flex flex-col lg:flex-row lg:justify-between! gap-10 lg:py-[132px];
+}
+
+.description{
+    @apply lg:text-left font-barlow text-[15px] sm:text-base lg:text-lg tracking-widest leading-[180%] text-[#D0D6F9];
+}
+
+.Separator-line{
+    @apply w-full h-px my-6 lg:my-10 opacity-60 bg-[#979797];
+}
+
 #home{
-    @apply relative h-dvh sm:h-full lg:h-dvh w-full pt-22 lg:pt-[133px] bg-[url(@/assets/images/home-bg/background-home-mobile.jpg)] sm:bg-[url(@/assets/images/home-bg/background-home-tablet.jpg)] lg:bg-[url(@/assets/images/home-bg/background-home-desktop.jpg)] bg-cover bg-center bg-no-repeat;
+    @apply relative h-dvh sm:h-full lg:h-dvh w-full pt-22 lg:pt-[133px] bg-[url(@/assets/images/home-bg/background-home-mobile.jpg)] sm:bg-[url(@/assets/images/home-bg/background-home-tablet.jpg)] lg:bg-[url(@/assets/images/home-bg/background-home-desktop.jpg)] bg-cover bg-fixed bg-center bg-no-repeat;
 }
 
 #home-main-container{
@@ -65,3 +89,50 @@
     @apply flex grow items-center justify-center lg:flex-1 lg:mr-10 lg:place-content-end font-bellefair text-lg;
 }
 
+.destination{
+    @apply relative w-full pt-22 lg:pt-[133px] bg-[url(@/assets/images/destination-bg/background-destination-mobile.jpg)] sm:bg-[url(@/assets/images/destination-bg/background-destination-tablet.jpg)] lg:bg-[url(@/assets/images/destination-bg/background-destination-desktop.jpg)] bg-fixed bg-cover bg-center bg-no-repeat;
+}
+
+.destination-images{
+    @apply flex items-center justify-center lg:flex-1 py-[26px] sm:py-[42px] lg:py-0 lg:px-[30px];
+}
+
+.destination-images-size{
+    @apply w-[150px] sm:w-[300px] lg:w-[480px];
+}
+
+.destination-nav-container{
+    @apply lg:flex lg:flex-col lg:items-start lg:h-full sm:px-22 lg:px-12 flex-1;
+}
+
+.destination-nav{
+    @apply mb-6 lg:mb-10;
+}
+
+.destination-nav-list {
+    @apply flex items-center justify-center gap-8 
+}
+
+.destination-nav-item{
+    @apply uppercase font-barlow tracking-[2px] text-sm sm:text-base pb-2 border-b-3 cursor-pointer transition-all duration-300;
+}
+
+.destination-planet-name{
+    @apply mb-4 uppercase text-white font-bellefair text-[56px] sm:text-[80px] lg:text-8xl;
+}
+
+.destination-information-list{
+    @apply flex flex-col sm:flex-row justify-center sm:justify-around lg:justify-start items-center gap-6  lg:text-left;
+}
+
+.destination-information-item{
+    @apply uppercase lg:flex-1;
+}
+
+.destination-information-type{
+    @apply mb-3 tracking-[2px] font-barlow text-sm text-[#D0D6F9];
+}
+
+.destination-information-value{
+    @apply  font-bellefair text-[28px] text-white
+}
