@@ -1,14 +1,13 @@
 import data from "@/datas/data.json";
 
 const base = import.meta.env.BASE_URL;
-console.log(data)
 
-export function getDestinations() {
-  return data.destinations.map((planet) => ({
-    ...planet,
+export function loadData(sectionName) {
+  return data[sectionName].map((item) => ({
+    ...item,
     images: {
-      png: `${base}${planet.images.png.replace(/^\//, "")}`,
-      webp: `${base}${planet.images.webp.replace(/^\//, "")}`,
+      png: `${base}${item.images.png.replace(/^\//, "")}`,
+      webp: `${base}${item.images.webp.replace(/^\//, "")}`,
     },
   }));
 }

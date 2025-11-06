@@ -89,50 +89,50 @@
     @apply flex grow items-center justify-center lg:flex-1 lg:mr-10 lg:place-content-end font-bellefair text-lg;
 }
 
-.destination{
+.destinations{
     @apply relative w-full pt-22 lg:pt-[133px] bg-[url(@/assets/images/destination-bg/background-destination-mobile.jpg)] sm:bg-[url(@/assets/images/destination-bg/background-destination-tablet.jpg)] lg:bg-[url(@/assets/images/destination-bg/background-destination-desktop.jpg)] bg-fixed bg-cover bg-center bg-no-repeat;
 }
 
-.destination-images{
+.destinations-images{
     @apply flex items-center justify-center lg:flex-1 py-[26px] sm:py-[42px] lg:py-0 lg:px-[30px];
 }
 
-.destination-images-size{
+.destinations-images-size{
     @apply w-[150px] sm:w-[300px] lg:w-[480px];
 }
 
-.destination-nav-container{
+.destinations-nav-container{
     @apply lg:flex lg:flex-col lg:items-start lg:h-full sm:px-22 lg:px-12 flex-1;
 }
 
-.destination-nav{
+.destinations-nav{
     @apply mb-6 lg:mb-10;
 }
 
-.destination-nav-list {
+.destinations-nav-list {
     @apply flex items-center justify-center gap-8 
 }
 
-.destination-nav-item{
+.destinations-nav-item{
     @apply uppercase font-barlow tracking-[2px] text-sm sm:text-base pb-2 border-b-3 cursor-pointer transition-all duration-300;
 }
 
-.destination-planet-name{
+.destinations-planet-name{
     @apply mb-4 uppercase text-white font-bellefair text-[56px] sm:text-[80px] lg:text-8xl;
 }
 
-.destination-information-list{
+.destinations-information-list{
     @apply flex flex-col sm:flex-row justify-center sm:justify-around lg:justify-start items-center gap-6  lg:text-left;
 }
 
-.destination-information-item{
+.destinations-information-item{
     @apply uppercase lg:flex-1;
 }
 
-.destination-information-type{
+.destinations-information-type{
     @apply mb-3 tracking-[2px] font-barlow text-sm text-[#D0D6F9];
 }
 
-.destination-information-value{
+.destinations-information-value{
     @apply  font-bellefair text-[28px] text-white
 }
