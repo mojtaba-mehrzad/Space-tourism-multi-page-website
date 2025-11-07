@@ -31,8 +31,8 @@ const router = createBrowserRouter([{
   element: <RootLayout />,
   children:[
     {index:true, element:<Home />},
-    {path:"Destination", element: <Destination />},
-    {path:"Crew", element: <Crew />}
+    {path:"destination", element: <Destination />},
+    {path:"crew", element: <Crew />}
   ]
 }])
 
