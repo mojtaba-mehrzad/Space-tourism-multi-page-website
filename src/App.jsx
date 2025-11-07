@@ -8,7 +8,6 @@ import { SplitText } from "gsap/SplitText";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Destination from "./pages/Destination/Destination";
 import RootLayout from "./components/layout/RootLayout";
 import Crew from "./pages/Crew/Crew";
@@ -34,18 +33,12 @@ const router = createBrowserRouter([{
     {path:"destination", element: <Destination />},
     {path:"crew", element: <Crew />}
   ]
-}])
+}],{ basename })
 
 function App() {
 
   return (
-    <RouterProvider router={router} basename={basename}/>
-    // <BrowserRouter basename={basename}>
-    //   <Routes>
-    //       <Route path="/" element={<Home />} />
-    //       <Route path="/Destination" element={<Destination />} />
-    //   </Routes>
-    // </BrowserRouter>
+    <RouterProvider router={router}/>
   );
 }
 
