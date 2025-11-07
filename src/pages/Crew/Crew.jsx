@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { loadData } from "@/utils/loadData";
-import Image from "@/components/ui/image";
+import Image from "@/components/ui/Image";
 import CrewNavigationBar from "./sections/CrewNavigationBar";
 
 

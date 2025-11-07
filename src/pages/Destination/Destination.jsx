@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Image from "@/components/ui/image";
+import Image from "@/components/ui/Image";
 import NavigationBar from "./sections/NavigationBar";
 import TravelInformation from "./sections/TravelInformation";
 import { loadData } from "@/utils/loadData";
