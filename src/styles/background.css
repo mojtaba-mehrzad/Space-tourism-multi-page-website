@@ -1,0 +1,15 @@
+.bg-base-styles{
+    @apply bg-cover bg-fixed bg-center bg-no-repeat
+}
+
+.bg-home{
+    @apply bg-[url(@/assets/images/home-bg/background-home-mobile.jpg)] sm:bg-[url(@/assets/images/home-bg/background-home-tablet.jpg)] lg:bg-[url(@/assets/images/home-bg/background-home-desktop.jpg)];
+}
+
+.bg-destination{
+    @apply bg-[url(@/assets/images/destination-bg/background-destination-mobile.jpg)] sm:bg-[url(@/assets/images/destination-bg/background-destination-tablet.jpg)] lg:bg-[url(@/assets/images/destination-bg/background-destination-desktop.jpg)];
+}
+
+.bg-crew{
+    @apply bg-[url(@/assets/images/crew-bg/background-crew-mobile.jpg)] sm:bg-[url(@/assets/images/crew-bg/background-crew-tablet.jpg)] lg:bg-[url(@/assets/images/crew-bg/background-crew-desktop.jpg)];
+}

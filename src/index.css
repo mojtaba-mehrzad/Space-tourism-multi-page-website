@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import './assets/fonts/fonts.css';
+@import '@/styles/background.css';
 
 @theme {
   --font-bellefair: 'Bellefair', serif;

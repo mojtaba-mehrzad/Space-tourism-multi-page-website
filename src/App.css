@@ -58,7 +58,7 @@
 }
 
 .text-inner{
-    @apply flex flex-col items-center mb-auto lg:items-start lg:justify-start lg:mt-40 flex-1 min-h-[290px] size-full w-full lg:max-w-[539px];
+    @apply flex flex-col items-center mb-auto lg:items-start lg:justify-start  min-h-[290px] size-full w-full lg:max-w-[539px];
 }
 
 .description{
@@ -72,7 +72,7 @@
 
 
 #home{
-    @apply relative h-dvh sm:h-full lg:h-dvh w-full pt-22 lg:pt-[133px] bg-[url(@/assets/images/home-bg/background-home-mobile.jpg)] sm:bg-[url(@/assets/images/home-bg/background-home-tablet.jpg)] lg:bg-[url(@/assets/images/home-bg/background-home-desktop.jpg)] bg-cover bg-fixed bg-center bg-no-repeat;
+    @apply relative h-dvh sm:h-full lg:h-dvh w-full pt-22 lg:pt-[133px];
 }
 
 #home-main-container{
@@ -100,7 +100,7 @@
 }
 
 .destinations{
-    @apply relative w-full pt-22 lg:pt-[133px] bg-[url(@/assets/images/destination-bg/background-destination-mobile.jpg)] sm:bg-[url(@/assets/images/destination-bg/background-destination-tablet.jpg)] lg:bg-[url(@/assets/images/destination-bg/background-destination-desktop.jpg)] bg-fixed bg-cover bg-center bg-no-repeat;
+    @apply relative w-full pt-22 lg:pt-[133px];
 }
 
 .destinations-images{
@@ -111,10 +111,6 @@
     @apply w-[150px] sm:w-[300px] lg:w-[480px];
 }
 
-/* .destinations-nav{
-    @apply ;
-} */
-
 .destinations-nav-list {
     @apply flex items-center justify-center gap-8;
 }
@@ -124,7 +120,7 @@
 }
 
 .destinations-planet-name{
-    @apply mb-4 uppercase text-white font-bellefair text-[56px] sm:text-[80px] lg:text-8xl;
+    @apply mb-4 uppercase text-white font-bellefair text-[56px] sm:text-[80px] lg:text-8xl lg:text-left;
 }
 
 .destinations-information-list{
@@ -145,7 +141,7 @@
 
 
 .crew{
-    @apply relative w-full pt-22 lg:pt-[133px] bg-[url(@/assets/images/crew-bg/background-crew-mobile.jpg)] sm:bg-[url(@/assets/images/crew-bg/background-crew-tablet.jpg)] lg:bg-[url(@/assets/images/crew-bg/background-crew-desktop.jpg)] bg-fixed bg-cover bg-center bg-no-repeat;
+    @apply relative w-full pt-22 lg:pt-[133px];
 
 }
 
@@ -162,7 +158,7 @@
 }
 
 .crew-nav-list{
-    @apply flex justify-center gap-4 lg:gap-10;
+    @apply flex justify-center lg:justify-start gap-4 lg:gap-10;
 }
 
 .image-container{
