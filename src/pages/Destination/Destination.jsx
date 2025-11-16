@@ -11,22 +11,40 @@ export default function Destination() {
   const data = loadData("destinations");
   const [selectPlanet, setSelectPlanet] = useState(data[0]);
   return (
-    <section className="destinations">
-      <article className="page-container">
-        <PageHeader number="01" title="Pick your destination" />
-        <TwoColumnLayout 
-          one={
-            <Image png={selectPlanet.images.png} webp={selectPlanet.images.webp} imageSize={"destinations-images-size"} continerStylr={"destinations-images"} />
-          }
-          two={
-            <DestinationContent 
-              planet={selectPlanet}
-              NavigationBar={<Tabs items={data} onSelect={setSelectPlanet} active={selectPlanet.name} getLabel={(item)=> (item.name)} variant="underline" listStyle="destinations-nav-list" />}
-              TravelInfo={<TravelInformation distance={selectPlanet.distance} travel={selectPlanet.travel} />}
+    <section className="page-container">
+      <PageHeader number="01" title="Pick your destination" />
+      <TwoColumnLayout
+        one={
+          <section className="destinations-images-container">
+            <Image
+              png={selectPlanet.images.png}
+              webp={selectPlanet.images.webp}
+              imageSize={"destinations-images-size"}
             />
-          }
-        />
-      </article>
+          </section>
+        }
+        two={
+          <DestinationContent
+            planet={selectPlanet}
+            NavigationBar={
+              <Tabs
+                items={data}
+                onSelect={setSelectPlanet}
+                active={selectPlanet.name}
+                getLabel={(item) => item.name}
+                variant="underline"
+              />
+            }
+            TravelInfo={
+              <TravelInformation
+                distance={selectPlanet.distance}
+                travel={selectPlanet.travel}
+              />
+            }
+          />
+        }
+        className="two-column-container"
+      />
     </section>
   );
 }

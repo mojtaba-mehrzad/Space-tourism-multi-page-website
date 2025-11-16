@@ -7,10 +7,11 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { SplitText } from "gsap/SplitText";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Destination from "./pages/Destination/Destination";
-import RootLayout from "./components/layout/RootLayout";
-import Crew from "./pages/Crew/Crew";
+import Home from "@/pages/Home/Home";
+import Destination from "@/pages/Destination/Destination";
+import RootLayout from "@/components/layout/RootLayout";
+import Crew from "@/pages/Crew/Crew";
+import Technology from "@/pages/Technology/Technology";
 
 gsap.registerPlugin(
   useGSAP,
@@ -31,7 +32,8 @@ const router = createBrowserRouter([{
   children:[
     {index:true, element:<Home />},
     {path:"destination", element: <Destination />},
-    {path:"crew", element: <Crew />}
+    {path:"crew", element: <Crew />},
+    {path:"technology", element: <Technology />}
   ]
 }],{ basename })
 

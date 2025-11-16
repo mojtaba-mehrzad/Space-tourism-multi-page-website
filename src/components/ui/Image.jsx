@@ -1,9 +1,9 @@
-export default function Image({png, webp, imageSize, continerStylr}) {
+export default function Image({png, webp, imageSize, }) {
   return (
     <figure className="flex justify-center items-end">
-        <picture className={continerStylr}>
-            <source srcSet={webp} type="image/webp" />
-            <source srcSet={png} type="image/png" />
+        <picture >
+            <source media="(max-width:1023px)" srcSet={webp} type="image/webp" />
+            <source media="(min-width:1024px)" srcSet={png} type="image/png" />
             <img className={imageSize} src={png} alt="" />
         </picture>
     </figure>

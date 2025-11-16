@@ -12,7 +12,6 @@ export default function RootLayout() {
     : "bg-home";
 
   return (
-    <>
     <div className={`${bgClass} min-h-screen bg-base-styles`}>
       <header>
         <Navbar />
@@ -21,6 +20,5 @@ export default function RootLayout() {
         <Outlet />
       </main>
     </div>
-    </>
   );
 }

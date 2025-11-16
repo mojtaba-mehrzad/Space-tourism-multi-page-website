@@ -11,36 +11,33 @@ export default function Crew() {
   const [crew, setCrew] = useState(data[0]);
 
   return (
-    <section className="crew">
-      <article className="page-container">
-        <PageHeader number="02" title="Meet your crew" />
-        <TwoColumnLayout
-          one={
-            <CrewContent
-              crew={crew}
-              CrewNavigationBar={
-                <Tabs
-                  items={data}
-                  active={crew.name}
-                  onSelect={setCrew}
-                  variant="dot"
-                  listStyle="crew-nav-list"
-                />
-              }
-            />
-          }
-          two={
-            <section className="image-container">
-              <Image
-                png={crew.images.png}
-                webp={crew.images.webp}
-                imageSize={"crew-images-size"}
-                continerStylr={""}
+    <section className="page-container">
+      <PageHeader number="02" title="Meet your crew" />
+      <TwoColumnLayout
+        one={
+          <CrewContent
+            crew={crew}
+            CrewNavigationBar={
+              <Tabs
+                items={data}
+                active={crew.name}
+                onSelect={setCrew}
+                variant="dot"
               />
-            </section>
-          }
-        />
-      </article>
+            }
+          />
+        }
+        two={
+          <section className="crew-image-container">
+            <Image
+              png={crew.images.png}
+              webp={crew.images.webp}
+              imageSize={"crew-images-size"}
+            />
+          </section>
+        }
+        className="two-column-container"
+      />
     </section>
   );
 }
