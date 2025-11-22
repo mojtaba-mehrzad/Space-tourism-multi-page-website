@@ -1,0 +1,6 @@
+{
+  "listStyle": "technology-nav-list",
+  "baseStyles": "technology-nav-item",
+  "activeStyles": "bg-white text-blue/900",
+  "inactiveStyles": "text-white border-white/25 hover:border-white"
+}

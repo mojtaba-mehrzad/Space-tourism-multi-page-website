@@ -1,0 +1,6 @@
+{
+  "listStyle": "destinations-nav-list",
+  "baseStyles": "destinations-nav-item ",
+  "activeStyles": "border-white text-white",
+  "inactiveStyles": "text-[#D0D6F9] border-transparent hover:border-white/40 hover:text-white"
+}

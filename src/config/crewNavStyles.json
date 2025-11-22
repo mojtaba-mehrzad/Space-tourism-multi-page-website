@@ -1,0 +1,6 @@
+{
+  "listStyle": "crew-nav-list",
+  "baseStyles": "crew-nav-item",
+  "activeStyles": "bg-[#979797]",
+  "inactiveStyles": "bg-[#979797]/18 hover:bg-[#979797]"
+}

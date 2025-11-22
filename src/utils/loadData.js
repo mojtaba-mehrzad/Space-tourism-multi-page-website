@@ -15,3 +15,9 @@ export function loadData(sectionName) {
     return{ ...item, images};
     })
 }
+
+export function resolveImages(images) {
+   return Object.fromEntries(
+     Object.entries(images).map(([key, path]) => [key, `${base}${path}`])
+   );
+}

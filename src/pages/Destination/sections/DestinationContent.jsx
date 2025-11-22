@@ -1,8 +1,8 @@
-export default function DestinationContent({ planet, NavigationBar, TravelInfo }) {
+export default function DestinationContent({ planet, destinationNavigationBar, TravelInfo }) {
   return (
     <>
       <div className="text-inner gap-6 lg:gap-10">
-        {NavigationBar}
+        {destinationNavigationBar}
         <div className="mb-auto h-[218px] sm:h-[235px]">
           <h2 className="destinations-planet-name">{planet.name}</h2>
           <p className=" description">{planet.description}</p>

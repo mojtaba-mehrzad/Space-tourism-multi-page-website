@@ -2,10 +2,11 @@ import { useState } from "react";
 import Image from "@/components/ui/Image";
 import TravelInformation from "./sections/TravelInformation";
 import { loadData } from "@/utils/loadData";
-import TwoColumnLayout from "@/components/layout/TwoColumnLayout";
 import DestinationContent from "./sections/DestinationContent";
 import Tabs from "@/components/ui/Tabs";
 import PageHeader from "@/components/ui/PageHeader";
+import destinationNavStyles from "@/config/destinationNavStayles.json";
+import Split from "@/components/layout/Split";
 
 export default function Destination() {
   const data = loadData("destinations");
@@ -13,8 +14,8 @@ export default function Destination() {
   return (
     <section className="page-container">
       <PageHeader number="01" title="Pick your destination" />
-      <TwoColumnLayout
-        one={
+      <Split className="split-container">
+        <Split.Left>
           <section className="destinations-images-container">
             <Image
               png={selectPlanet.images.png}
@@ -22,17 +23,17 @@ export default function Destination() {
               imageSize={"destinations-images-size"}
             />
           </section>
-        }
-        two={
+        </Split.Left>
+        <Split.Right>
           <DestinationContent
             planet={selectPlanet}
-            NavigationBar={
+            destinationNavigationBar={
               <Tabs
                 items={data}
                 onSelect={setSelectPlanet}
                 active={selectPlanet.name}
-                getLabel={(item) => item.name}
-                variant="underline"
+                getLabel={(item, index) => item.name}
+                styles={destinationNavStyles}
               />
             }
             TravelInfo={
@@ -42,9 +43,8 @@ export default function Destination() {
               />
             }
           />
-        }
-        className="two-column-container"
-      />
+        </Split.Right>
+      </Split>
     </section>
   );
 }

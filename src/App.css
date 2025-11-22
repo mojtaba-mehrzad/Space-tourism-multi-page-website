@@ -48,7 +48,7 @@
 .page-container{
     @apply flex flex-col items-center size-full px-6 pb-6 pt-22 sm:px-10 sm:pb-10 sm:pt-[136px] lg:px-[165px] lg:pt-[181px] lg:pb-12 gap-6 text-center;
 }
-.two-column-container{
+.split-container{
     @apply lg:items-center justify-center gap-8 lg:py-[132px] sm:max-w-lg lg:max-w-full lg:h-[734px];
 }
 
