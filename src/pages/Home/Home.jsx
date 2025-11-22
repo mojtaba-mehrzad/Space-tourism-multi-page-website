@@ -1,11 +1,17 @@
 import ExploreButton from "./sections/ExploreButton";
+import { useRef } from "react";
+import { useGsap } from "@/utils/useGsap";
+import { heroTitleAnimation } from "@/animations/heroTitle";
 
 export default function Home() {
+  const titleRef = useRef(null);
+  useGsap(()=>{heroTitleAnimation(titleRef)}, [])
+
   return (
     <section id="home">
       <section id="home-main-container">
         <div id="home-texts-container">
-          <h1 id="home-title">
+          <h1 id="home-title" ref={titleRef}>
             So, you want to travel to
             <p>Space</p>
           </h1>

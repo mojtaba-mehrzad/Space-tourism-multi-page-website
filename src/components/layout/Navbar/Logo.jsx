@@ -1,9 +1,15 @@
 import navIcon from "@/assets/images/shared/logo.svg";
+import { NavLink } from "react-router-dom";
+import { useRef } from "react";
+import { navLogoAnimation } from "@/animations/navLogo";
+import { useGsap } from "@/utils/useGsap";
 
 export default function Logo() {
+  const logoRef = useRef(null);
+  useGsap(()=>{navLogoAnimation(logoRef)}, [])
   return (
-    <a href="#" className="cursor-pointer">
+    <NavLink to={"/"} className="cursor-pointer" ref={logoRef}>
       <img id="nav-icon" src={navIcon} alt="" />
-    </a>
+    </NavLink>
   );
 }
