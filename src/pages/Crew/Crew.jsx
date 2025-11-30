@@ -12,7 +12,7 @@ export default function Crew() {
   const [crew, setCrew] = useState(data[0]);
 
   return (
-    <section className="page-container">
+    <section className="page-container" data-bg="bg-crew">
       <PageHeader number="02" title="Meet your crew" />
       <Split className="split-container">
         <Split.Left>

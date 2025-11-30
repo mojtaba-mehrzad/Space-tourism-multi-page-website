@@ -1,31 +1,31 @@
 @import "tailwindcss";
 @import './index.css';
 
-#nav{
+.nav{
     @apply  absolute top-0 left-0 right-0 z-50 flex  items-center justify-between p-6 sm:p-0 lg:pt-10 w-full sm:h-24 lg:h-[130px];
 }
 
-#nav-logo-container{
+.nav-logo-container{
     @apply flex lg:items-center flex-1 z-20;
 }
 
-#nav-icon{
+.nav-icon{
     @apply w-10 sm:mx-10 md:mx-16 sm:w-12;
 }
 
-#draw-nav-line{
+.draw-nav-line{
     @apply hidden md:block -mr-8  lg:grow h-px bg-white/30 ml-8 z-30 pointer-events-none;
 }
 
-#nav-links-container-1{
+.nav-links-container-1{
     @apply hidden sm:flex relative sm:justify-end sm:px-10 lg:pr-16 lg:pl-24 sm:w-[640px] lg:min-w-fit lg:w-1/2 sm:h-full sm:backdrop-blur-2xl sm:bg-white/5;
 }
 
-#nav-links-list{
+.nav-links-list{
     @apply flex flex-col sm:flex-row gap-8 sm:gap-12 sm:h-full;
 }
 
-#nav-links-item{
+.nav-links-item{
     @apply flex w-full sm:min-w-fit sm:h-full;
 }
 
@@ -33,7 +33,7 @@
     @apply size-full place-content-center font-barlow text-white cursor-pointer tracking-widest uppercase opacity-60 border-r-[3px] sm:border-r-0 sm:border-b-[3px] border-transparent transition-all duration-300;
 }
 
-#nav-mobileMenu{
+.nav-mobileMenu{
     @apply sm:hidden top-0 right-0 pl-8 pt-[133px] h-full w-2/3 bg-[rgba(255,255,255,0.05)] backdrop-blur-2xl z-0 ;
 }
 
@@ -66,31 +66,31 @@
 
 
 
-#home{
+.home{
     @apply relative h-dvh sm:h-full lg:h-dvh w-full pt-22 lg:pt-[133px];
 }
 
-#home-main-container{
+.home-main-container{
     @apply flex flex-col lg:flex-row p-6 sm:p-0 sm:px-10 sm:py-32 lg:p-32 sm:gap-10 justify-between text-center lg:text-left size-full;
 }
 
-#home-texts-container{
+.home-texts-container{
     @apply flex flex-col lg:flex-1 sm:px-12 gap-2 h-fit cursor-default;
 }
 
-#home-title{
+.home-title{
     @apply font-barlow uppercase sm:text-[28px] tracking-[2px] sm:tracking-[4px] text-[#D0D6F9];
 }
 
-#home-title p{
+.home-title p{
     @apply font-bellefair text-white text-[80px] sm:text-[144px];
 }
 
-#home-descripton{
+.home-descripton{
     @apply font-barlow text-[15px] sm:text-base lg:text-lg tracking-widest leading-[180%] text-[#D0D6F9];
 }
 
-#explore-button-container{
+.explore-button-container{
     @apply flex grow items-center justify-center lg:flex-1 lg:mr-10 lg:place-content-end font-bellefair text-lg;
 }
 

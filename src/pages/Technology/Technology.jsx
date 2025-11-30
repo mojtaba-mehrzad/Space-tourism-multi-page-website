@@ -12,7 +12,7 @@ export default function Technology() {
   const [technology, setTechnology] = useState(data[0]);
 
   return (
-    <section className="page-container">
+    <section className="page-container" data-bg="bg-technology">
       <PageHeader number="03" title=" Space launch 101" />
       <Split className="split-container">
         <Split.Left className="lg:order-2">

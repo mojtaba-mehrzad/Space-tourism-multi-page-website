@@ -1,5 +1,5 @@
-.bg-base-styles{
-    @apply bg-cover bg-fixed bg-center bg-no-repeat
+body{
+    @apply bg-cover bg-fixed bg-center bg-no-repeat duration-600;
 }
 
 .bg-home{

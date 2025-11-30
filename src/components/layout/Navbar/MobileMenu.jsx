@@ -3,7 +3,7 @@ import NavLinks from './NavLinks'
 
 export default function MobileMenu({isOpen, onClose }) {
   return (
-    <aside id='nav-mobileMenu' className={`${isOpen ? 'fixed' : 'hidden'}`}>
+    <aside className={`${isOpen ? 'fixed' : 'hidden'} nav-mobileMenu`}>
       <NavLinks onClick={onClose} />
     </aside>
   )

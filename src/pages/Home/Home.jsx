@@ -8,10 +8,10 @@ export default function Home() {
   useGsap(()=>{heroTitleAnimation(titleRef)}, [])
 
   return (
-    <section id="home">
-      <section id="home-main-container">
-        <div id="home-texts-container">
-          <h1 id="home-title" ref={titleRef}>
+    <section className="home" data-bg="bg-home">
+      <section className="home-main-container">
+        <div className="home-texts-container">
+          <h1 className="home-title" ref={titleRef}>
             So, you want to travel to
             <p>Space</p>
           </h1>
@@ -22,7 +22,7 @@ export default function Home() {
             world experience!
           </p>
         </div>
-        <div id="explore-button-container">
+        <div className="explore-button-container">
           <ExploreButton />
         </div>
       </section>

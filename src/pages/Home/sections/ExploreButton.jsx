@@ -5,8 +5,9 @@ export default function ExploreButton() {
   return (
     <NavLink
       to={"/destination"}
-      className="size-36 sm:size-68 bg-white sm:text-[32px] border-none hover:outline-88 outline-[rgba(255,255,255,0.1)] rounded-full text-center place-content-center cursor-pointer"
+      className="flex items-center justify-center relative size-36 sm:size-68 bg-white sm:text-[32px]  border-none  rounded-full text-center cursor-pointer"
     >
+      <span className="absolute size-full max-w-64 max-h-64 hover:animate-ping active:animate-ping bg-[rgba(255,255,255,0.25)] rounded-full"></span>
       EXPLORE
     </NavLink>
   );

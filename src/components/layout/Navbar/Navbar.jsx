@@ -16,12 +16,12 @@ export default function Navbar() {
   useGsap(() => {navLogoContainerAnimation(logoContainerRef);}, []);
 
   return (
-    <nav id="nav">
-      <div id="nav-logo-container" ref={logoContainerRef}>
+    <nav className="nav">
+      <div className="nav-logo-container" ref={logoContainerRef}>
         <Logo />
-        <span id="draw-nav-line"></span>
+        <span className="draw-nav-line" ></span>
       </div>
-      <div id="nav-links-container-1" ref={navRef}>
+      <div className="nav-links-container-1" ref={navRef}>
         <NavLinks />
       </div>
       <HamburgerButton

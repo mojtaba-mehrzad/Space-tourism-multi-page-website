@@ -1,8 +1,13 @@
-import React from 'react'
+import { useRef } from "react";
+import { useGsap } from "@/utils/useGsap";
+import { pageWrapperAnimation } from "@/animations/pageWrapper";
 
 export default function Split({children, className=""}) {
+  const containerRef = useRef(null);
+  useGsap(() => {pageWrapperAnimation(containerRef)}, []);
+  
   return (
-    <section className={`flex flex-col lg:flex-row ${className}`} >
+    <section ref={containerRef} className={`flex flex-col lg:flex-row ${className}`} >
         {children}
     </section>
   )

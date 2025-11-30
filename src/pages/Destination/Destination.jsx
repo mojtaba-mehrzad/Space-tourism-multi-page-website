@@ -18,7 +18,7 @@ export default function Destination() {
   useGsap(()=>{planetFadeAnimation(imageRef)}, [])
 
   return (
-    <section className="page-container">
+    <section className="page-container" data-bg="bg-destination">
       <PageHeader number="01" title="Pick your destination" />
       <Split className="split-container">
         <Split.Left>

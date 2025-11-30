@@ -3,13 +3,12 @@ import { navLinks } from "@/datas/navLinksData";
 
 export default function NavLinks({ onClick }) {
   return (
-    <ul id="nav-links-list">
+    <ul className="nav-links-list">
       {navLinks.map((link) => (
-        <li key={link.path} id="nav-links-item">
+        <li key={link.path} className="nav-links-item">
           <NavLink
             to={link.path}
             onClick={onClick}
-            id="item-link"
             className={({ isActive }) =>`item-link ${
                 isActive
                   ? " border-white! opacity-100!"

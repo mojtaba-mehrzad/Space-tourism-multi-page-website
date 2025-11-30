@@ -9,7 +9,7 @@ export default function Logo() {
   useGsap(()=>{navLogoAnimation(logoRef)}, [])
   return (
     <NavLink to={"/"} className="cursor-pointer" ref={logoRef}>
-      <img id="nav-icon" src={navIcon} alt="" />
+      <img className="nav-icon" src={navIcon} alt="" />
     </NavLink>
   );
 }
