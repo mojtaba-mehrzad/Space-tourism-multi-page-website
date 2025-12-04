@@ -75,15 +75,15 @@
 }
 
 .home-texts-container{
-    @apply flex flex-col lg:flex-1 sm:px-12 gap-2 h-fit cursor-default;
+    @apply flex flex-col lg:flex-1 sm:px-12 w-fit h-fit cursor-default;
 }
 
 .home-title{
     @apply font-barlow uppercase sm:text-[28px] tracking-[2px] sm:tracking-[4px] text-[#D0D6F9];
 }
 
-.home-title p{
-    @apply font-bellefair text-white text-[80px] sm:text-[144px];
+.home-accent-title{
+    @apply font-bellefair uppercase  text-white text-[80px] sm:text-[144px] tracking-[2px] sm:tracking-[4px];
 }
 
 .home-descripton{

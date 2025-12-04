@@ -12,7 +12,7 @@ import { planetFadeAnimation } from "@/animations/planetFade";
 
 export default function Destination() {
   const data = loadData("destinations");
-  const [selectPlanet, setSelectPlanet] = useState(data[0]);
+  const [selectedPlanet, setSelectPlanet] = useState(data[0]);
   const imageRef = useRef(null)
 
   useGsap(()=>{planetFadeAnimation(imageRef)}, [])
@@ -24,28 +24,28 @@ export default function Destination() {
         <Split.Left>
           <section className="destinations-images-container" ref={imageRef}>
             <Image
-              png={selectPlanet.images.png}
-              webp={selectPlanet.images.webp}
+              png={selectedPlanet.images.png}
+              webp={selectedPlanet.images.webp}
               imageSize={"destinations-images-size"}
             />
           </section>
         </Split.Left>
         <Split.Right>
           <DestinationContent
-            planet={selectPlanet}
+            planet={selectedPlanet}
             destinationNavigationBar={
               <Tabs
                 items={data}
                 onSelect={setSelectPlanet}
-                active={selectPlanet.name}
+                active={selectedPlanet.name}
                 getLabel={(item, index) => item.name}
                 styles={destinationNavStyles}
               />
             }
             TravelInfo={
               <TravelInformation
-                distance={selectPlanet.distance}
-                travel={selectPlanet.travel}
+                distance={selectedPlanet.distance}
+                travel={selectedPlanet.travel}
               />
             }
           />

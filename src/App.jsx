@@ -5,6 +5,8 @@ import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { SplitText } from "gsap/SplitText";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "@/pages/Home/Home";
@@ -18,7 +20,8 @@ gsap.registerPlugin(
   DrawSVGPlugin,
   ScrollTrigger,
   ScrollToPlugin,
-  SplitText
+  SplitText,
+  ScrambleTextPlugin
 );
 
 const basename =
