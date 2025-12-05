@@ -1,19 +1,13 @@
-import { scrambleTextAnimation } from "@/animations/scrambleText";
-import { useGsap } from "@/utils/useGsap";
-import { useRef } from "react";
-
-export default function DestinationContent({ planet, destinationNavigationBar, TravelInfo }) {
-  const planetNameRef = useRef();
-  useGsap(() => {scrambleTextAnimation(planetNameRef.current, planet.name);}, [planet]);
+export default function DestinationContent({ planet, destinationNavigationBar, TravelInfo, refs }) {
   return (
       <div className="text-inner gap-6 lg:gap-10">
         {destinationNavigationBar}
         <div className="mb-auto h-[218px] sm:h-[235px]">
-          <h2 className="destinations-planet-name" ref={planetNameRef}>{planet.name}</h2>
-          <p className=" description">{planet.description}</p>
+          <h2 className="destinations-planet-name" ref={refs.planetName}>{planet.name}</h2>
+          <p className=" description" ref={refs.description}>{planet.description}</p>
         </div>
-        <div className="Separator-line"></div>
-        <div className="w-full">
+        <div className="Separator-line" ref={refs.SeparatorLine}></div>
+        <div className="w-full" ref={refs.TravelInfoContainer}>
           {TravelInfo}
         </div>
       </div>

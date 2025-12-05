@@ -4,7 +4,7 @@ import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 gsap.registerPlugin(ScrambleTextPlugin);
 
 export function scrambleTextAnimation(target, newText) {
-  if (!target) return;
+  if (!target) return gsap.timeline();
   const finalText = newText ?? target.innerText;
 
 
@@ -12,16 +12,17 @@ export function scrambleTextAnimation(target, newText) {
   gsap.set(target, { opacity: 0 });
 
   if(newText){target.innerText = "";}
-
-  gsap.timeline()
-    .to(target, { opacity: 1, duration: 1.5 })
+  const t1= gsap.timeline();
+    t1.to(target, { opacity: 1, duration: 0.4 })
     .to(target, {
-      duration: 1,
+      duration: 0.8,
       ease: "none",
       scrambleText: {
         text: finalText,
         revealDelay: 0,
-        speed: 0.4     
+        speed: 0.8,
+        chars: 0 
       }
     }, "<");
+    return t1; 
 }
