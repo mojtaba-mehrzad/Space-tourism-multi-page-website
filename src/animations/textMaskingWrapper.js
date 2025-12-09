@@ -5,19 +5,17 @@ gsap.registerPlugin(SplitText);
 
 export function textMaskingWrapper(target , newText) {
   if (!target) return gsap.timeline();
-  // const finalText = newText ?? target.innerText;
+  if (newText) {target.innerText = newText;}
 
-  // gsap.killTweensOf(target);
-  // if(newText){target.innerText = "";}
   gsap.set(target, { opacity: 1 });
-  
-  const t1 = gsap.timeline();
+
+  const tl = gsap.timeline();
   let split = new SplitText(target, {
     type: "words,lines",
     linesClass: "line",
     mask: "lines",
   });
-  t1.from(split.lines, {
+  tl.from(split.lines, {
     duration: 0.3,
     yPercent: 100,
     opacity: 0,
@@ -25,6 +23,8 @@ export function textMaskingWrapper(target , newText) {
     ease: "expo.out",
     text: newText
   });
-
-  return t1;
+  tl.add(() => {
+    split.revert();
+  });
+  return tl;
 }

@@ -22,7 +22,8 @@ export default function Destination() {
     TravelInfoContainer: useRef(null),
     travelVal: useRef(null),
     distanceVal: useRef(null),
-    image: useRef(null)
+    image: useRef(null),
+    prevSrc: useRef(true)
   }
   useGsap(() => {
     destinationMasterTimeline(elementRefs, selectedPlanet);
@@ -33,11 +34,12 @@ export default function Destination() {
       <PageHeader number="01" title="Pick your destination" />
       <Split className="split-container">
         <Split.Left>
-          <section className="destinations-images-container" ref={elementRefs.image}>
+          <section className="destinations-images-container">
             <Image
               png={selectedPlanet.images.png}
               webp={selectedPlanet.images.webp}
               imageSize={"destinations-images-size"}
+              refs={elementRefs}
             />
           </section>
         </Split.Left>

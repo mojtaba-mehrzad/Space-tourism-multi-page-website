@@ -2,12 +2,12 @@ import { scrambleTextAnimation } from "./scrambleText";
 import { textMaskingWrapper } from "./textMaskingWrapper";
 import { risingUpAnimation } from "./risingUp";
 import { gsap } from "gsap";
-import { planetFadeAnimation } from "@/animations/planetFade";
+import { usePlanetImageTransition } from "./usePlanetImageTransition";
 
 export function destinationMasterTimeline(refs, planet) {
-  const t1 = gsap.timeline();
+  const tl = gsap.timeline();
 
-  t1.add(planetFadeAnimation(refs.image.current))
+  tl.add(usePlanetImageTransition(refs, planet.images.png))
     .add(scrambleTextAnimation(refs.planetName.current, planet.name))
     .add(textMaskingWrapper(refs.description.current, planet.description))
     .add(risingUpAnimation(refs.SeparatorLine.current))
@@ -15,5 +15,5 @@ export function destinationMasterTimeline(refs, planet) {
     .add(scrambleTextAnimation(refs.travelVal.current, planet.travel), "-=0.6")
     .add(scrambleTextAnimation(refs.distanceVal.current, planet.distance), "<");
 
-  return t1;
+  return tl;
 }
