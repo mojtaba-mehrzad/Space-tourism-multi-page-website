@@ -8,7 +8,7 @@ export function destinationMasterTimeline(refs, planet, isFirstRenderRef) {
   const tl = gsap.timeline();
 
   tl.add(usePlanetImageTransition(refs, planet.images, isFirstRenderRef))
-    .add(scrambleTextAnimation(refs.planetNameRef.current, planet.name))
+    .add(scrambleTextAnimation(refs.planetNameRef.current, planet.name), "-=1.3")
     .add(textMaskingWrapper(refs.descriptionRef.current, planet.description))
     .add(risingUpAnimation(refs.SeparatorLineRef.current))
     .add(risingUpAnimation(refs.TravelInfoContainerRef.current), "<")
