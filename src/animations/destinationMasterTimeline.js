@@ -1,19 +1,19 @@
+import { gsap } from "gsap";
 import { scrambleTextAnimation } from "./scrambleText";
 import { textMaskingWrapper } from "./textMaskingWrapper";
 import { risingUpAnimation } from "./risingUp";
-import { gsap } from "gsap";
 import { usePlanetImageTransition } from "./usePlanetImageTransition";
 
-export function destinationMasterTimeline(refs, planet) {
+export function destinationMasterTimeline(refs, planet, isFirstRenderRef) {
   const tl = gsap.timeline();
 
-  tl.add(usePlanetImageTransition(refs, planet.images.png))
-    .add(scrambleTextAnimation(refs.planetName.current, planet.name))
-    .add(textMaskingWrapper(refs.description.current, planet.description))
-    .add(risingUpAnimation(refs.SeparatorLine.current))
-    .add(risingUpAnimation(refs.TravelInfoContainer.current), "<")
-    .add(scrambleTextAnimation(refs.travelVal.current, planet.travel), "-=0.6")
-    .add(scrambleTextAnimation(refs.distanceVal.current, planet.distance), "<");
+  tl.add(usePlanetImageTransition(refs, planet.images, isFirstRenderRef))
+    .add(scrambleTextAnimation(refs.planetNameRef.current, planet.name))
+    .add(textMaskingWrapper(refs.descriptionRef.current, planet.description))
+    .add(risingUpAnimation(refs.SeparatorLineRef.current))
+    .add(risingUpAnimation(refs.TravelInfoContainerRef.current), "<")
+    .add(scrambleTextAnimation(refs.travelValRef.current, planet.travel), "-=0.5")
+    .add(scrambleTextAnimation(refs.distanceValRef.current, planet.distance), "<");
 
   return tl;
 }

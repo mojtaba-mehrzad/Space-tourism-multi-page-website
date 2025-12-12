@@ -1,20 +1,10 @@
-import { scrambleTextAnimation } from "@/animations/scrambleText";
-import { useGsap } from "@/utils/useGsap";
-import { useRef } from "react";
-
-export default function CrewContent({ crew, CrewNavigationBar }) {
-    const crewNameRef = useRef(null);
-    const crewRoleRef = useRef(null);
-
-    useGsap(() => {scrambleTextAnimation(crewNameRef.current, crew.name);}, [crew]);
-    useGsap(() => {scrambleTextAnimation(crewRoleRef.current, crew.role);}, [crew]);
-
+export default function CrewContent({ crew, CrewNavigationBar, refs }) {
   return (
     <>
       <div className="text-inner">
-        <h2 className="crew-role" ref={crewRoleRef}>{crew.role}</h2>
-        <h3 className="crew-name" ref={crewNameRef}>{crew.name}</h3>
-        <p className="description">{crew.bio}</p>
+        <h2 className="crew-role" ref={refs.crewRoleRef}>{crew.role}</h2>
+        <h3 className="crew-name" ref={refs.crewNameRef}>{crew.name}</h3>
+        <p className="description" ref={refs.crewBioRef}>{crew.bio}</p>
       </div>
       <div className="crew-nav-container">{CrewNavigationBar}</div>
     </>

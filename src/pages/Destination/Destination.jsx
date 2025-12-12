@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "@/components/ui/Image";
 import TravelInformation from "./sections/TravelInformation";
 import { loadData } from "@/utils/loadData";
@@ -8,36 +8,37 @@ import PageHeader from "@/components/ui/PageHeader";
 import destinationNavStyles from "@/config/destinationNavStayles.json";
 import Split from "@/components/layout/Split";
 import { useGsap } from "@/utils/useGsap";
-import { planetFadeAnimation } from "@/animations/planetFade";
 import { destinationMasterTimeline } from "@/animations/destinationMasterTimeline";
 
 export default function Destination() {
   const data = loadData("destinations");
   const [selectedPlanet, setSelectPlanet] = useState(data[0]);
-
+  const isFirstRender = useRef(true);
+  const rootRef= useRef(null)
   const elementRefs= {
-    planetName: useRef(null),
-    description: useRef(null),
-    SeparatorLine: useRef(null),
-    TravelInfoContainer: useRef(null),
-    travelVal: useRef(null),
-    distanceVal: useRef(null),
-    image: useRef(null),
-    prevSrc: useRef(true)
+    planetNameRef: useRef(null),
+    descriptionRef: useRef(null),
+    SeparatorLineRef: useRef(null),
+    TravelInfoContainerRef: useRef(null),
+    travelValRef: useRef(null),
+    distanceValRef: useRef(null),
+    imageRef: useRef(null),
+    source1Ref: useRef(null),
+    source2Ref: useRef(null),
+    pictureRef: useRef(null)
   }
+
   useGsap(() => {
-    destinationMasterTimeline(elementRefs, selectedPlanet);
+    destinationMasterTimeline(elementRefs, selectedPlanet, isFirstRender) , rootRef
   }, [selectedPlanet]);
 
   return (
-    <section className="page-container" data-bg="bg-destination">
+    <section className="page-container" data-bg="bg-destination" ref={rootRef}>
       <PageHeader number="01" title="Pick your destination" />
       <Split className="split-container">
         <Split.Left>
           <section className="destinations-images-container">
             <Image
-              png={selectedPlanet.images.png}
-              webp={selectedPlanet.images.webp}
               imageSize={"destinations-images-size"}
               refs={elementRefs}
             />
