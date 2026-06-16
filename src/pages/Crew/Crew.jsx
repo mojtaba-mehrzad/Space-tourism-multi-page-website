@@ -29,7 +29,7 @@ export default function Crew() {
   }, [crew]);
 
   return (
-    <section ref={swipeRef} className="page-container touch-pan-y" data-bg="bg-crew">
+    <section ref={swipeRef} className="page-container touch-pan-y select-none" data-bg="bg-crew">
       <PageHeader number="02" title="Meet your crew" />
       <Split className="split-container">
         <Split.Left>

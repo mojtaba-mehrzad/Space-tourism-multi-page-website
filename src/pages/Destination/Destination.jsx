@@ -43,7 +43,7 @@ export default function Destination() {
   }, [selectedPlanet]);
 
   return (
-    <section className="page-container touch-pan-y" data-bg="bg-destination" ref={mergedRef}>
+    <section className="page-container touch-pan-y select-none" data-bg="bg-destination" ref={mergedRef}>
       <PageHeader number="01" title="Pick your destination" />
       <Split className="split-container">
         <Split.Left>
