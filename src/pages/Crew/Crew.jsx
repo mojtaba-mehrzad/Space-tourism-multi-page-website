@@ -8,6 +8,7 @@ import crewNavStyles from "@/config/crewNavStyles.json";
 import Split from "@/components/layout/Split";
 import { useGsap } from "@/utils/useGsap";
 import { crewMasterTimeline } from "@/animations/crewMasterTimeline";
+import { useSwipeNavigation } from "@/utils/useSwipeNavigation";
 
 export default function Crew() {
   const data = loadData("crew");
@@ -18,12 +19,17 @@ export default function Crew() {
     crewBioRef: useRef(null),
     imageRef: useRef(null),
   };
+ const swipeRef = useSwipeNavigation(
+    data.findIndex(item => item.name === crew.name), 
+    (newIndex) => setCrew(data[newIndex]),
+    data.length
+  );
   useGsap(() => {
     crewMasterTimeline(elementRefs, crew);
   }, [crew]);
 
   return (
-    <section className="page-container" data-bg="bg-crew">
+    <section ref={swipeRef} className="page-container touch-pan-y" data-bg="bg-crew">
       <PageHeader number="02" title="Meet your crew" />
       <Split className="split-container">
         <Split.Left>

@@ -9,27 +9,33 @@ import Split from "@/components/layout/Split";
 import { useGsap } from "@/utils/useGsap";
 import { technologyMsterTimeline } from "@/animations/technologyMsterTimeline";
 import { scrambleTextAnimation } from "@/animations/scrambleText";
+import { useSwipeNavigation } from "@/utils/useSwipeNavigation";
 
 
 
 export default function Technology() {
   const data = loadData("technology");
   const [technology, setTechnology] = useState(data[0]);
-    const elementRefs = {
-      technologyNameRef: useRef(null),
-      technologyTitleRef: useRef(null),
-      technologyDescriptionRef: useRef(null),
-      imageRef: useRef(null),
-    };
-    useGsap(() => {
-      scrambleTextAnimation(elementRefs.technologyTitleRef.current)
-    }, []);
-    useGsap(() => {
-      technologyMsterTimeline(elementRefs, technology);
-    }, [technology]);
+  const elementRefs = {
+    technologyNameRef: useRef(null),
+    technologyTitleRef: useRef(null),
+    technologyDescriptionRef: useRef(null),
+    imageRef: useRef(null),
+  };
+  const swipeRef = useSwipeNavigation(
+    data.findIndex(item => item.name === technology.name), 
+    (newIndex) => setTechnology(data[newIndex]),
+    data.length
+  );
+  useGsap(() => {
+    scrambleTextAnimation(elementRefs.technologyTitleRef.current)
+  }, []);
+  useGsap(() => {
+    technologyMsterTimeline(elementRefs, technology);
+  }, [technology]);
 
   return (
-    <section className="page-container" data-bg="bg-technology">
+    <section ref={swipeRef} className="page-container touch-pan-y" data-bg="bg-technology">
       <PageHeader number="03" title=" Space launch 101" />
       <Split className="split-container">
         <Split.Left className="lg:order-2">
