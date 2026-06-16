@@ -2,13 +2,14 @@ import { gsap } from "gsap";
 import { scrambleTextAnimation } from "./scrambleText";
 import { textMaskingWrapper } from "./textMaskingWrapper";
 import { planetFadeAnimation } from "./planetFade";
+import {imageSlideAnimation} from "./imageSlide";
 
 export function crewMasterTimeline(refs, crew) {
   const tl = gsap.timeline();
 
   tl.add(scrambleTextAnimation(refs.crewRoleRef.current, crew.role))
-    .add(scrambleTextAnimation(refs.crewNameRef.current, crew.name))
-    .add(textMaskingWrapper(refs.crewBioRef.current, crew.bio), "+=0.3");
-
+    .add(imageSlideAnimation(refs.imageRef), 0)
+    .add(scrambleTextAnimation(refs.crewNameRef.current, crew.name), "<0.8")
+    .add(textMaskingWrapper(refs.crewBioRef.current, crew.bio));
   return tl;
 }
