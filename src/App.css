@@ -1,5 +1,10 @@
 @import "tailwindcss";
 @import './index.css';
+img{
+    height: auto;
+    object-fit: contain;
+    will-change: transform;
+}
 
 .nav{
     @apply  absolute top-0 left-0 right-0 z-50 flex  items-center justify-between p-6 sm:p-0 lg:pt-10 w-full sm:h-24 lg:h-[130px];
@@ -46,7 +51,7 @@
 }
 
 .page-container{
-    @apply flex flex-col items-center w-screen h-full px-6 pb-6 pt-22 sm:px-10 sm:pb-10 sm:pt-[136px] lg:px-[165px] lg:pt-[181px] lg:pb-12 gap-6 text-center;
+    @apply flex flex-col items-center overflow-hidden size-full px-6 pb-6 pt-22 sm:px-10 sm:pb-10 sm:pt-[136px] lg:px-[165px] lg:pt-[181px] lg:pb-12 gap-6 text-center;
 }
 .split-container{
     @apply lg:items-center justify-center gap-8 lg:py-[132px] sm:max-w-lg lg:max-w-full px-6 lg:h-[734px];
@@ -97,7 +102,11 @@
 
 
 .destinations-images-container{
-    @apply flex items-center justify-center flex-1 py-[26px] sm:py-[42px] lg:py-0 lg:px-[30px];
+    @apply flex items-center  relative justify-center flex-1 py-[26px] sm:py-[42px] lg:py-0 lg:px-[30px];
+}
+
+.destinations-images-container figure{
+    @apply aspect-square
 }
 
 .destinations-images-size{
@@ -157,6 +166,10 @@
     @apply flex items-center justify-center h-full flex-1;
 }
 
+.crew-image-container figure{
+    @apply aspect-square
+}
+
 .crew-images-size{
     @apply min-w-full w-full sm:max-w-[446px] lg:w-[540px] h-auto my-auto;
 }
@@ -166,6 +179,11 @@
 .technology-image-container{
     @apply flex items-center justify-center flex-1 -mx-6 mt-16 sm:-mx-14 lg:mx-0 lg:mt-0 h-full;
 }
+
+.technology-image-container figure{
+    @apply aspect-4/2
+}
+
 .technology-images-size{
     @apply min-w-full h-[258px] lg:h-full object-cover
 }
