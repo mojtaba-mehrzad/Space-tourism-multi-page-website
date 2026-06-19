@@ -35,9 +35,9 @@ export default function Technology() {
   }, [technology]);
 
   return (
-    <section ref={swipeRef} className="page-container touch-pan-y select-none" data-bg="bg-technology">
+    <section ref={swipeRef} className="page-container !pr-0 touch-pan-y select-none" data-bg="bg-technology">
       <PageHeader number="03" title=" Space launch 101" />
-      <Split className="split-container">
+      <Split className="split-container !px-0">
         <Split.Left className="lg:order-2">
           <section className="technology-image-container">
             <Image

@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import './index.css';
 img{
-    height: auto;
     object-fit: contain;
     will-change: transform;
 }
@@ -80,7 +79,7 @@ img{
 }
 
 .home-texts-container{
-    @apply flex flex-col lg:flex-1 sm:px-12 w-fit h-fit cursor-default;
+    @apply flex flex-col lg:flex-1 sm:px-12 w-full md:w-fit h-fit cursor-default;
 }
 
 .home-title{
@@ -177,15 +176,15 @@ img{
 
 
 .technology-image-container{
-    @apply flex items-center justify-center flex-1 -mx-6 mt-16 sm:-mx-14 lg:mx-0 lg:mt-0 h-full;
+    @apply flex items-center justify-center !w-full flex-1 -mx-6 mt-16 sm:-mx-14 lg:mx-0 lg:mt-0 h-full;
 }
 
 .technology-image-container figure{
-    @apply aspect-4/2
+    @apply  !w-full
 }
 
 .technology-images-size{
-    @apply min-w-full h-[258px] lg:h-full object-cover
+    @apply !min-w-full !w-full h-[258px] lg:h-full object-cover;
 }
 
 .technology-title{
@@ -197,7 +196,7 @@ img{
 }
 
 .technology-nav-container{
-    @apply pt-6  ;
+    @apply pt-6 md:pt-2  ;
 }
 
 .technology-nav-list {
