@@ -1,7 +1,6 @@
 import { gsap } from "gsap";
 import { scrambleTextAnimation } from "./scrambleText";
 import { textMaskingWrapper } from "./textMaskingWrapper";
-import { planetFadeAnimation } from "./planetFade";
 import {imageSlideAnimation} from "./imageSlide";
 
 export function crewMasterTimeline(refs, crew) {
