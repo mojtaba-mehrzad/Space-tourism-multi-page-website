@@ -5,6 +5,7 @@ import { risingUpAnimation } from "./risingUp";
 import { usePlanetImageTransition } from "./usePlanetImageTransition";
 
 export function destinationMasterTimeline(refs, planet, isFirstRenderRef) {
+  console.log(refs.distanceValRef.current);
   const tl = gsap.timeline();
 
   tl.add(usePlanetImageTransition(refs, planet.images, isFirstRenderRef))
@@ -12,7 +13,7 @@ export function destinationMasterTimeline(refs, planet, isFirstRenderRef) {
     .add(textMaskingWrapper(refs.descriptionRef.current, planet.description))
     .add(risingUpAnimation(refs.SeparatorLineRef.current))
     .add(risingUpAnimation(refs.TravelInfoContainerRef.current), "<")
-    .add(scrambleTextAnimation(refs.travelValRef.current, planet.travel), "-=0.5")
+    .add(scrambleTextAnimation(refs.travelValRef.current, planet.travel))
     .add(scrambleTextAnimation(refs.distanceValRef.current, planet.distance), "<");
 
   return tl;
