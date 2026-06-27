@@ -40,7 +40,7 @@ img{
 .nav-mobileMenu{
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    @apply sm:hidden top-0 right-0 pl-8 pt-[133px] h-full w-2/3 bg-black/10 shadow-2xl backdrop-blur-[25px] z-0;
+    @apply sm:hidden top-0 right-0 pl-8 pt-[133px] h-full w-2/3 bg-black/60 shadow-2xl  z-0;
 }
 
 .page-title{
