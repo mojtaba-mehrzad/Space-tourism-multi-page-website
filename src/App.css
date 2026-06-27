@@ -22,7 +22,10 @@ img{
 }
 
 .nav-links-container-1{
-    @apply hidden sm:flex relative sm:justify-end sm:px-10 lg:pr-16 lg:pl-24 sm:w-[640px] lg:min-w-fit lg:w-1/2 sm:h-full bg-white/5 backdrop-blur-2xl shadow-2xl before:absolute before:inset-0 before:bg-white/5 before:backdrop-blur-xl before:-z-10;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: linear-gradient(180deg,rgba(255,255,255,0.08) 0%,rgba(255,255,255,0.03) 100%);
+    @apply hidden sm:flex relative sm:justify-end sm:px-10 lg:pr-16 lg:pl-24 sm:w-[640px] lg:min-w-fit lg:w-1/2 sm:h-full shadow-2xl;
 }
 
 .nav-links-list{
