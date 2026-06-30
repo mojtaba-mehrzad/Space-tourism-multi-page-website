@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
@@ -9,6 +10,7 @@ import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import LoadingScreen from "@/components/layout/LoadingScreen";
 import Home from "@/pages/Home/Home";
 import Destination from "@/pages/Destination/Destination";
 import RootLayout from "@/components/layout/RootLayout";
@@ -41,9 +43,16 @@ const router = createBrowserRouter([{
 }],{ basename })
 
 function App() {
-
+  const [isLoaded, setIsLoaded] = useState(false);
   return (
-    <RouterProvider router={router}/>
+    // <RouterProvider router={router}/>
+    <>
+      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
+      
+      {isLoaded && (
+        <RouterProvider router={router} />
+      )}
+    </>
   );
 }
 

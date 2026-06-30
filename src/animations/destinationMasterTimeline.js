@@ -5,7 +5,6 @@ import { risingUpAnimation } from "./risingUp";
 import { usePlanetImageTransition } from "./usePlanetImageTransition";
 
 export function destinationMasterTimeline(refs, planet, isFirstRenderRef) {
-  console.log(refs.distanceValRef.current);
   const tl = gsap.timeline();
 
   tl.add(usePlanetImageTransition(refs, planet.images, isFirstRenderRef))
