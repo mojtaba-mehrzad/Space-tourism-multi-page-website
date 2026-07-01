@@ -1,5 +1,25 @@
 import { loadData } from './loadData';
 
+import bgHomeMobile from "@/assets/images/home-bg/background-home-mobile.jpg";
+import bgHomeTablet from "@/assets/images/home-bg/background-home-tablet.jpg";
+import bgHomeDesktop from "@/assets/images/home-bg/background-home-desktop.jpg";
+import bgDestinationMobile from "@/assets/images/destination-bg/background-destination-mobile.jpg";
+import bgDestinationTablet from "@/assets/images/destination-bg/background-destination-tablet.jpg";
+import bgDestinationDesktop from "@/assets/images/destination-bg/background-destination-desktop.jpg";
+import bgCrewMobile from "@/assets/images/crew-bg/background-crew-mobile.jpg";
+import bgCrewTablet from "@/assets/images/crew-bg/background-crew-tablet.jpg";
+import bgCrewDesktop from "@/assets/images/crew-bg/background-crew-desktop.jpg";
+import bgTechnologyMobile from "@/assets/images/technology-bg/background-technology-mobile.jpg";
+import bgTechnologyTablet from "@/assets/images/technology-bg/background-technology-tablet.jpg";
+import bgTechnologyDesktop from "@/assets/images/technology-bg/background-technology-desktop.jpg";
+
+const backgroundsByPage = {
+  home: { mobile: bgHomeMobile, tablet: bgHomeTablet, desktop: bgHomeDesktop },
+  destination: { mobile: bgDestinationMobile, tablet: bgDestinationTablet, desktop: bgDestinationDesktop },
+  crew: { mobile: bgCrewMobile, tablet: bgCrewTablet, desktop: bgCrewDesktop },
+  technology: { mobile: bgTechnologyMobile, tablet: bgTechnologyTablet, desktop: bgTechnologyDesktop },
+};
+
 export async function preloadAllImages() {
   const imagePaths = new Set();
 
@@ -16,7 +36,7 @@ export async function preloadAllImages() {
           });
         }
       });
-    } catch (e) {
+    } catch {
       console.log(`Failed to load data for ${page}`);
     }
   });
@@ -40,9 +60,5 @@ function getResponsiveBackgrounds() {
                : width < 1024 ? 'tablet'
                : 'desktop';
 
-  const pages = ['home', 'destination', 'crew', 'technology'];
-
-  return pages.map(name =>
-    `/assets/images/${name}-bg/background-${name}-${device}.jpg`
-  );
+  return Object.values(backgroundsByPage).map(bg => bg[device]);
 }
