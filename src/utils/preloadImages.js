@@ -3,7 +3,6 @@ import { loadData } from './loadData';
 export async function preloadAllImages() {
   const imagePaths = new Set();
 
-  // ۱. تصاویر از data (با محافظت کامل)
   const pages = ['crew', 'destinations', 'technology'];
   pages.forEach(page => {
     try {
@@ -22,7 +21,6 @@ export async function preloadAllImages() {
     }
   });
 
-  // ۲. تصاویر shared
   const shared = [
     '/assets/images/shared/logo.svg',
     '/assets/images/shared/icon-hamburger.svg',
@@ -30,14 +28,12 @@ export async function preloadAllImages() {
   ];
   shared.forEach(path => imagePaths.add(path));
 
-  // ۳. بک‌گراندها
   const backgrounds = getResponsiveBackgrounds();
   backgrounds.forEach(path => imagePaths.add(path));
 
   return Array.from(imagePaths);
 }
 
-// تابع بک‌گراند responsive
 function getResponsiveBackgrounds() {
   const paths = [];
   const isMobile = window.innerWidth < 640;

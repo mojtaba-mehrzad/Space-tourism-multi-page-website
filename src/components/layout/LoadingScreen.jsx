@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useGsap } from "@/utils/useGsap";
 import { preloadAllImages } from "../../utils/preloadImages";
 
 export default function LoadingScreen({ onComplete }) {
@@ -7,8 +8,8 @@ export default function LoadingScreen({ onComplete }) {
   const rocketRef = useRef(null);
   const starsRef = useRef([]);
 
-useEffect(() => {
-    const startPreload = async () => {
+useGsap(() => {
+  const startPreload = async () => {
       const imagePaths = await preloadAllImages();
       let loaded = 0;
 
@@ -31,40 +32,40 @@ useEffect(() => {
 
       await Promise.all(loadPromises);
 
-      // لانچ موشک
-      gsap.to(rocketRef.current, {
+      const tl = gsap.timeline();
+
+      tl.to(rocketRef.current, {
         y: -900,
-        duration: 1.8,
+        duration: 2.8,
         ease: "power4.in",
-        onComplete: () => setTimeout(onComplete, 300)
+        onComplete: () => setTimeout(onComplete, 500)
       });
 
-      // Star Trail به سمت پایین
       starsRef.current.forEach((star, i) => {
-        gsap.to(star, {
+        tl.to(star, {
           y: 1200,
-          duration: 0.8 + Math.random() * 0.3,
+          duration: 0.6 + Math.random() * 0.2,
           ease: "power2.in",
-          delay: i * 0.01
-        });
+          delay: i * 0.002
+        }, "-=0.9");
       });
     };
     startPreload();
-  }, [onComplete]);
+}, [onComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#0A0B14] flex items-center justify-center overflow-hidden">
+    <div className="fixed inset-0 z-50 font-barlow bg-[#0A0B14] flex items-end pb-12 justify-center overflow-hidden">
       <div className="text-center relative">
         {/* موشک */}
-        <div ref={rocketRef} className="size-36 mx-auto mb-12 transition-transform duration-300">
-            <img className="size-full" src="data:image/png;base64,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" alt="rocket"></img>
+        <div ref={rocketRef} className="size-46 mx-auto mb-4 transition-transform duration-300">
+            <svg className="size-full" width="100" height="125" viewBox="0 0 100 125">
+              <path d="M56.031,77.503c-0.328-2.115-0.692-4.225-1.062-6.333c-0.154-0.584-0.817-2.978-1.672-4.901  c-0.198-0.378-0.386-0.778-0.592-1.16c-0.115-0.2-0.229-0.405-0.347-0.567l0.005-0.002c-0.439-0.645-1.006-1.11-1.907-1.048  c-2.043,0.144-2.393,2.368-3.154,3.914c-0.385,0.782-0.543,1.68-0.773,2.536c-1.992,7.391-2.425,14.95-2.446,22.558  c-0.012,4.237,1.171,5.566,5.403,5.991c2.137,0.212,4.093-0.41,5.985-1.323c1.068-0.513,1.562-1.28,1.57-2.557  C57.083,88.883,56.907,83.171,56.031,77.503z" fill="#ffffff"></path><path d="M78.089,93.826C75.59,83.581,70.94,74.222,66.131,64.93c-0.678-1.312-1.351-2.587-1.444-4.146  c-0.468-7.78-1.475-15.501-3.038-23.136c-0.2-0.974-0.408-1.949-0.622-2.919C55.329,5.843,50.873,1.477,50.873,1.477  c-5.025,7.534-9.601,27.382-10.927,33.491c-1.39,5.969-2.228,12.057-2.815,18.181c-0.541,5.624-1.462,10.93-4.288,16.058  c-4.563,8.285-8.295,17.003-10.289,26.355c-0.379,1.78-0.081,2.641,1.856,2.66c1.776,0.02,3.549,0.187,5.326,0.223  c6.225,0.125,6.276,0.115,6.504-6.049c0.059-1.583,0.485-2.249,2.175-2.333c4.478-0.223,4.479-0.3,4.857-4.696  c0.059-0.688,0.005-1.385,0.081-2.069c0.696-6.266,1.32-12.552,4.129-18.343c0.613-1.262,1.314-2.539,2.927-2.608  c1.571-0.07,2.29,1.033,2.951,2.162c0.007,0.012,0.017,0.031,0.026,0.043c0.084,0.145,0.17,0.293,0.254,0.435  c0.012,0.021,0.02,0.046,0.031,0.067c0.384,0.714,0.904,1.875,1.401,3.465c0.162,0.425,0.264,0.876,0.372,1.323  c0.091,0.358,0.186,0.709,0.271,1.104l-0.013,0.008c1.339,5.349,2.051,10.787,2.2,16.301c0.044,1.624,0.196,2.827,2.358,2.907  c4.608,0.166,4.604,0.27,4.564,4.898c0,0.197,0.017,0.397-0.01,0.593c-0.295,2.124,0.438,3.101,2.756,2.891  c2.354-0.214,4.738-0.074,7.107-0.164C79.127,98.212,79.153,98.184,78.089,93.826z M50.514,54.888  c-3.585-0.005-6.688-3.199-6.686-6.886c0.004-3.706,3.105-6.831,6.76-6.806c3.636,0.024,6.698,3.17,6.695,6.879  C57.281,51.741,54.149,54.893,50.514,54.888z" fill="#ffffff"></path>
+            </svg>
         </div>
         
-        {/* متن */}
-        <h1 className="text-2xl md:text-5xl font-light tracking-[6px] text-white mb-3">SPACE TOURISM</h1>
-        <p className="text-white/60 text-sm tracking-[3px] mb-12">PREPARING LAUNCH SEQUENCE...</p>
+        <h1 className="text-2xl tracking-[8px] text-white/80 mb-3">SPACE TOURISM</h1>
+        <p className="text-white/60 text-[12px] tracking-[3px] mb-8">PREPARING LAUNCH SEQUENCE...</p>
 
-        {/* Progress Bar */}
         <div className="w-80 h-1.5 bg-white/10 rounded-full mx-auto overflow-hidden">
           <div 
             className="h-full bg-gradient-to-r from-blue-400 via-cyan-400 to-white transition-all duration-300"
@@ -75,7 +76,6 @@ useEffect(() => {
         <p className="text-xs text-white/40 mt-4 font-mono">{Math.floor(progress)}% COMPLETE</p>
       </div>
 
-      {/* Stars Background */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(180)].map((_, i) => (
           <div 
