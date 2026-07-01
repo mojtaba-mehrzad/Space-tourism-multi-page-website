@@ -13,19 +13,32 @@ import { useSwipeNavigation } from "@/utils/useSwipeNavigation";
 export default function Crew() {
   const data = loadData("crew");
   const [crew, setCrew] = useState(data[0]);
+  const directionRef = useRef(1);
   const elementRefs = {
     crewNameRef: useRef(null),
     crewRoleRef: useRef(null),
     crewBioRef: useRef(null),
     imageRef: useRef(null),
   };
- const swipeRef = useSwipeNavigation(
-    data.findIndex(item => item.name === crew.name), 
-    (newIndex) => setCrew(data[newIndex]),
+  const currentIndex = data.findIndex((item) => item.name === crew.name);
+
+  const selectCrew = (newCrew, direction) => {
+    const newIndex = data.findIndex((item) => item.name === newCrew.name);
+    directionRef.current =
+      direction ?? getSwipeDirection(currentIndex, newIndex, data.length);
+    setCrew(newCrew);
+  };
+
+  const swipeRef = useSwipeNavigation(
+    currentIndex,
+    (newIndex, direction) => {
+      directionRef.current = direction;
+      setCrew(data[newIndex]);
+    },
     data.length
   );
   useGsap(() => {
-    crewMasterTimeline(elementRefs, crew);
+    crewMasterTimeline(elementRefs, crew, directionRef.current);
   }, [crew]);
 
   return (

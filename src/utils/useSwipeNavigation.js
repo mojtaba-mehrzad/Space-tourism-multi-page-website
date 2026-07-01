@@ -1,5 +1,18 @@
 import { useEffect, useRef } from "react";
 import Hammer from "hammerjs";
+
+export function getSwipeDirection(currentIndex, newIndex, totalItems) {
+  if (currentIndex === newIndex) return 1;
+
+  if (newIndex > currentIndex) {
+    if (currentIndex === totalItems - 1 && newIndex === 0) return -1;
+    return 1;
+  }
+
+  if (currentIndex === 0 && newIndex === totalItems - 1) return 1;
+  return -1;
+}
+
 export function useSwipeNavigation(currentIndex, setIndex, totalItems, disabled = false) {
   const containerRef = useRef(null);
 
@@ -50,10 +63,10 @@ export function useSwipeNavigation(currentIndex, setIndex, totalItems, disabled 
 
       if (diff > 0) {
         const next = (currentIndex + 1) % totalItems;
-        setIndex(next);
+        setIndex(next, 1);
       } else {
         const prev = currentIndex === 0 ? totalItems - 1 : currentIndex - 1;
-        setIndex(prev);
+        setIndex(prev, -1);
       }
     };
 
