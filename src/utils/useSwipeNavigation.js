@@ -61,10 +61,12 @@ export function useSwipeNavigation(currentIndex, setIndex, totalItems, disabled 
 
       if (Math.abs(diff) < threshold) return;
 
-      if (diff > 0) {
+      if (diff < 0) {
+        // swipe left-to-right (drag moves rightward) -> go to next item
         const next = (currentIndex + 1) % totalItems;
         setIndex(next, 1);
       } else {
+        // swipe right-to-left (drag moves leftward) -> go to previous item
         const prev = currentIndex === 0 ? totalItems - 1 : currentIndex - 1;
         setIndex(prev, -1);
       }

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { loadData } from "@/utils/loadData";
 import Image from "@/components/ui/Image";
 import Tabs from "@/components/ui/Tabs";
@@ -9,29 +9,29 @@ import Split from "@/components/layout/Split";
 import { useGsap } from "@/utils/useGsap";
 import { technologyMsterTimeline } from "@/animations/technologyMsterTimeline";
 import { scrambleTextAnimation } from "@/animations/scrambleText";
-import { useSwipeNavigation } from "@/utils/useSwipeNavigation";
+import { useSwipeableItem } from "@/utils/useSwipeableItem";
 
 
 
 export default function Technology() {
   const data = loadData("technology");
-  const [technology, setTechnology] = useState(data[0]);
+  const {
+    selected: technology,
+    select: selectTechnology,
+    swipeRef,
+    directionRef,
+  } = useSwipeableItem(data);
   const elementRefs = {
     technologyNameRef: useRef(null),
     technologyTitleRef: useRef(null),
     technologyDescriptionRef: useRef(null),
     imageRef: useRef(null),
   };
-  const swipeRef = useSwipeNavigation(
-    data.findIndex(item => item.name === technology.name), 
-    (newIndex) => setTechnology(data[newIndex]),
-    data.length
-  );
   useGsap(() => {
     scrambleTextAnimation(elementRefs.technologyTitleRef.current)
   }, []);
   useGsap(() => {
-    technologyMsterTimeline(elementRefs, technology);
+    technologyMsterTimeline(elementRefs, technology, directionRef.current);
   }, [technology]);
 
   return (
@@ -56,7 +56,7 @@ export default function Technology() {
               <Tabs
                 items={data}
                 active={technology.name}
-                onSelect={setTechnology}
+                onSelect={selectTechnology}
                 getLabel={(item, index) => index + 1}
                 styles={technologyNavStyles}
               />

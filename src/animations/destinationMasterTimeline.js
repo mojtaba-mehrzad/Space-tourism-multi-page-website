@@ -4,10 +4,10 @@ import { textMaskingWrapper } from "./textMaskingWrapper";
 import { risingUpAnimation } from "./risingUp";
 import { usePlanetImageTransition } from "./usePlanetImageTransition";
 
-export function destinationMasterTimeline(refs, planet, isFirstRenderRef) {
+export function destinationMasterTimeline(refs, planet, isFirstRenderRef, direction = 1) {
   const tl = gsap.timeline();
 
-  tl.add(usePlanetImageTransition(refs, planet.images, isFirstRenderRef))
+  tl.add(usePlanetImageTransition(refs, planet.images, isFirstRenderRef, direction))
     .add(scrambleTextAnimation(refs.planetNameRef.current, planet.name), "-=1.3")
     .add(textMaskingWrapper(refs.descriptionRef.current, planet.description))
     .add(risingUpAnimation(refs.SeparatorLineRef.current))
