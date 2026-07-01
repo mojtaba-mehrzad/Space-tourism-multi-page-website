@@ -1,5 +1,5 @@
-body{
-    @apply bg-cover bg-fixed bg-center bg-no-repeat duration-600;
+.page-background{
+    @apply fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat duration-600;
 }
 
 .bg-home{

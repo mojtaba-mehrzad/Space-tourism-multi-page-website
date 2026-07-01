@@ -6,3 +6,7 @@
   --font-bellefair: 'Bellefair', serif;
   --font-barlow: 'Barlow Condensed', sans-serif;
 }
+
+body{
+  background-color: #00031f;
+}
