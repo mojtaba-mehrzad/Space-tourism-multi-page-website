@@ -8,7 +8,7 @@ import crewNavStyles from "@/config/crewNavStyles.json";
 import Split from "@/components/layout/Split";
 import { useGsap } from "@/utils/useGsap";
 import { crewMasterTimeline } from "@/animations/crewMasterTimeline";
-import { useSwipeNavigation } from "@/utils/useSwipeNavigation";
+import { useSwipeNavigation, getSwipeDirection } from "@/utils/useSwipeNavigation";
 
 export default function Crew() {
   const data = loadData("crew");
@@ -53,7 +53,7 @@ export default function Crew() {
               <Tabs
                 items={data}
                 active={crew.name}
-                onSelect={setCrew}
+                onSelect={selectCrew}
                 styles={crewNavStyles}
               />
             }
