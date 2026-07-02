@@ -56,7 +56,7 @@ export default function LoadingScreen({ onComplete }) {
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 font-barlow bg-[#00031f] flex items-end pb-12 justify-center overflow-hidden">
+    <div className="fixed inset-0 z-50 font-barlow bg-[#000215] flex items-end pb-12 justify-center overflow-hidden">
       <div className="text-center relative">
         <div ref={refs.rocketRef} className="size-46 mx-auto mb-4">
             <svg className="size-full" width="100" height="125" viewBox="0 0 100 125">
