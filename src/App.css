@@ -107,7 +107,7 @@ img{
 }
 
 .destinations-images-size{
-    @apply w-[150px] sm:w-[300px] lg:w-[480px];
+    @apply w-[150px] sm:w-[300px] lg:w-[480px] drop-shadow-2xl/60 drop-shadow-black;
 }
 
 .destinations-nav-list {
@@ -168,7 +168,7 @@ img{
 }
 
 .crew-images-size{
-    @apply min-w-full w-full sm:max-w-[446px] lg:w-[540px] h-auto my-auto;
+    @apply min-w-full w-full sm:max-w-[446px] lg:w-[540px] h-auto my-auto drop-shadow-2xl/80 drop-shadow-black ;
 }
 
 
@@ -178,7 +178,7 @@ img{
 }
 
 .technology-images-size{
-    @apply h-[258px] md:h-[357px] max-w-screen lg:h-full object-cover;
+    @apply h-[258px] md:h-[357px] max-w-screen lg:h-full object-cover drop-shadow-2xl/80 drop-shadow-black;
 }
 
 .technology-title{
