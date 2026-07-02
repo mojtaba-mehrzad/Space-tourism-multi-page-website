@@ -1,4 +1,4 @@
-export default function TravelInformation({planetInfo, refs}) {
+export default function TravelInformation({ planetInfo, refs }) {
   return (
     <ul className="destinations-information-list">
       <li className="destinations-information-item">

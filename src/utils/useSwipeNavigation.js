@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import Hammer from "hammerjs";
 
 export function getSwipeDirection(currentIndex, newIndex, totalItems) {
   if (currentIndex === newIndex) return 1;
@@ -23,7 +22,7 @@ export function useSwipeNavigation(currentIndex, setIndex, totalItems, disabled 
     if (disabled || !containerRef.current) return;
 
     const container = containerRef.current;
-    let threshold = 80;
+    const threshold = 80;
 
     const handleTouchStart = (e) => {
       startX.current = e.changedTouches[0].screenX;

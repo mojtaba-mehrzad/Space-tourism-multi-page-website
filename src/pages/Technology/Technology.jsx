@@ -7,7 +7,7 @@ import TechnologyContent from "./sections/TechnologyContent";
 import technologyNavStyles from "@/config/technologyNavStyles.json";
 import Split from "@/components/layout/Split";
 import { useGsap } from "@/utils/useGsap";
-import { technologyMsterTimeline } from "@/animations/technologyMsterTimeline";
+import { technologyMasterTimeline } from "@/animations/technologyMasterTimeline";
 import { scrambleTextAnimation } from "@/animations/scrambleText";
 import { useSwipeableItem } from "@/utils/useSwipeableItem";
 
@@ -31,7 +31,7 @@ export default function Technology() {
     scrambleTextAnimation(elementRefs.technologyTitleRef.current)
   }, []);
   useGsap(() => {
-    technologyMsterTimeline(elementRefs, technology, directionRef.current);
+    technologyMasterTimeline(elementRefs, technology, directionRef.current);
   }, [technology]);
 
   return (

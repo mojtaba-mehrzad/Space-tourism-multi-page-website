@@ -1,4 +1,3 @@
-// src/animations/exploreButtonFade.js
 import { gsap } from "gsap";
 
 export function fadeAnimation(btnRef) {

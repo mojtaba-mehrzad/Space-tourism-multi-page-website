@@ -26,16 +26,9 @@ export default function Navbar() {
       </div>
       <HamburgerButton
         isOpen={isMenuOpen}
-        onToggel={() => {
-          setIsMenuOpen(!isMenuOpen);
-        }}
+        onToggle={() => setIsMenuOpen((open) => !open)}
       />
-      <MobileMenu
-        isOpen={isMenuOpen}
-        onClose={() => {
-          setIsMenuOpen(false);
-        }}
-      />
+      <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </nav>
   );
 }

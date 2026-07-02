@@ -3,14 +3,16 @@ import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(SplitText);
 
-export function textMaskingWrapper(target , newText) {
+export function textMaskingWrapper(target, newText) {
   if (!target) return gsap.timeline();
-  if (newText) {target.innerText = newText;}
+  if (newText) {
+    target.innerText = newText;
+  }
 
   gsap.set(target, { opacity: 1 });
 
   const tl = gsap.timeline();
-  let split = new SplitText(target, {
+  const split = new SplitText(target, {
     type: "words,lines",
     linesClass: "line",
     mask: "lines",

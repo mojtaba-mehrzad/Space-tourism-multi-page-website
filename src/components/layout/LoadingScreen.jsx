@@ -1,7 +1,7 @@
 import { useState, useRef, useMemo } from "react";
 import { useGsap } from "@/utils/useGsap";
 import { preloadAllImages } from "@/utils/preloadImages";
-import { loadingScreenMasterTimeline } from "@/animations/lodingScreenMasterTimeline";
+import { loadingScreenMasterTimeline } from "@/animations/loadingScreenMasterTimeline";
 import { rocketIdleFloat } from "@/animations/rocketIdleFloat";
 import { starsIdleTwinkle } from "@/animations/starsIdleTwinkle";
 

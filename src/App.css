@@ -92,10 +92,6 @@ img{
     @apply font-bellefair uppercase  text-white text-[80px] sm:text-[144px] tracking-[2px] sm:tracking-[4px];
 }
 
-.home-descripton{
-    @apply font-barlow text-[15px] sm:text-base lg:text-lg tracking-widest leading-[180%] text-[#D0D6F9];
-}
-
 .explore-button-container{
     @apply flex grow items-center justify-center lg:flex-1 lg:mr-10 lg:place-content-end font-bellefair text-lg;
 }

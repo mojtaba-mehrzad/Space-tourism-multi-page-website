@@ -1,8 +1,5 @@
-export default function Tabs({items, onSelect, active, getLabel, styles }) {
-  let baseStyles = styles.baseStyles;
-  let activeStyles = styles.activeStyles;
-  let inactiveStyles = styles.inactiveStyles;
-  let listStyle = styles.listStyle;
+export default function Tabs({ items, onSelect, active, getLabel, styles }) {
+  const { baseStyles, activeStyles, inactiveStyles, listStyle } = styles;
 
   return (
     <nav>
@@ -12,12 +9,8 @@ export default function Tabs({items, onSelect, active, getLabel, styles }) {
           return (
             <li key={item.name}>
               <button
-                onClick={() => {
-                  onSelect(item);
-                }}
-                className={`${baseStyles} ${
-                  isActive ? activeStyles : inactiveStyles
-                }`}
+                onClick={() => onSelect(item)}
+                className={`${baseStyles} ${isActive ? activeStyles : inactiveStyles}`}
               >
                 {getLabel ? getLabel(item, index) : null}
               </button>

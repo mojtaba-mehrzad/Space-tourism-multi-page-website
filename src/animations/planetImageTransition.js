@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { updateSources } from "@/utils/updateImageSources";
 
-export function usePlanetImageTransition(refs, imageSrc, isFirstRenderRef, direction = 1) {
+export function planetImageTransition(refs, imageSrc, isFirstRenderRef, direction = 1) {
   const img = refs.imageRef.current;
   const nextSrc = imageSrc.webp || imageSrc.png;
 

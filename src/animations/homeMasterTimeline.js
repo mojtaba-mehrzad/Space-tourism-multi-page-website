@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { scrambleTextAnimation } from "./scrambleText";
 import { textMaskingWrapper } from "./textMaskingWrapper";
-import { fadeAnimation } from "./Fade";
+import { fadeAnimation } from "./exploreButtonFade";
 export function homeMasterTimeline(refs) {
   const tl = gsap.timeline();
 

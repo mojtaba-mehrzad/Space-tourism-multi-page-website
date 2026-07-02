@@ -32,7 +32,7 @@ export default function Crew() {
           <CrewContent
             crew={crew}
             refs={elementRefs}
-            CrewNavigationBar={
+            crewNavigationBar={
               <Tabs
                 items={data}
                 active={crew.name}

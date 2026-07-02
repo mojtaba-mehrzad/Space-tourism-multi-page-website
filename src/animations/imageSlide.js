@@ -1,4 +1,3 @@
-// src/animations/crewImageSlide.js
 import { gsap } from "gsap";
 
 export function imageSlideAnimation(imageRef, direction = 1) {

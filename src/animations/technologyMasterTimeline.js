@@ -3,7 +3,7 @@ import { scrambleTextAnimation } from "./scrambleText";
 import { textMaskingWrapper } from "./textMaskingWrapper";
 import {imageSlideAnimation} from "./imageSlide";
 
-export function technologyMsterTimeline(refs, technology, direction = 1) {
+export function technologyMasterTimeline(refs, technology, direction = 1) {
   const tl = gsap.timeline();
   tl.add(scrambleTextAnimation(refs.technologyNameRef.current, technology.name))
     .add(imageSlideAnimation(refs.imageRef, direction), 0)

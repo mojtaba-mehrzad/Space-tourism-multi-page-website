@@ -5,7 +5,7 @@ import { loadData } from "@/utils/loadData";
 import DestinationContent from "./sections/DestinationContent";
 import Tabs from "@/components/ui/Tabs";
 import PageHeader from "@/components/ui/PageHeader";
-import destinationNavStyles from "@/config/destinationNavStayles.json";
+import destinationNavStyles from "@/config/destinationNavStyles.json";
 import Split from "@/components/layout/Split";
 import { useGsap } from "@/utils/useGsap";
 import { destinationMasterTimeline } from "@/animations/destinationMasterTimeline";
@@ -67,11 +67,8 @@ export default function Destination() {
                 styles={destinationNavStyles}
               />
             }
-            TravelInfo={
-              <TravelInformation
-                planetInfo={selectedPlanet}
-                refs={elementRefs}
-              />
+            travelInfo={
+              <TravelInformation planetInfo={selectedPlanet} refs={elementRefs} />
             }
           />
         </Split.Right>
