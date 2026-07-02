@@ -7,7 +7,6 @@ export function rocketIdleFloat(rocketRef) {
 
   return gsap.to(rocketRef.current, {
     y: -14,
-    rotate: 1.5,
     duration: 1.8,
     ease: "sine.inOut",
     yoyo: true,
